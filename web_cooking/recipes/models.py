@@ -8,3 +8,9 @@ class Add_recipe(models.Model):
     updated = models.DateTimeField(auto_now_add = False, auto_now = True)
     date = models.DateTimeField(auto_now_add = True, auto_now = False)
     image = models.ImageField(blank = True)
+
+    def __unicode__(self):
+        return self.title
+
+    def __str__(self):
+        return self.title
