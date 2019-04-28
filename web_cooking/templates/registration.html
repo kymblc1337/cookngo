@@ -1,0 +1,14 @@
+
+{% block reg %}
+    <title>Регистрация</title>
+
+    <div>
+        <form action="/accounts/registration/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input class = "button" type = "submit" value="Зарегистрироваться">
+        </form>
+    </div>
+
+{% endblock %}

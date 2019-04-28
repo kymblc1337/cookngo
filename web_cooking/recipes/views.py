@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import auth
+from django import forms
 from django.template.context_processors import csrf
 
 
@@ -15,17 +16,30 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            return redirect('/test')
+            return redirect('/')
         else:
             args['login_errors'] = "Пользователь не найден / неправильный пароль"
             return render_to_response('login.html', args)
     else:
         return render_to_response('login.html', args)
 
+def registration(request):
+    args = dict()
+    args.update(csrf(request))
+    args['form'] = UserCreationForm()
+    if request.POST:
+        new_userform = UserCreationForm(request.POST)
+        if new_userform.is_valid():
+            new_userform.save()
+            new_user = auth.authenticate(username=new_userform.cleaned_data['username'],password=new_userform.cleaned_data['password2'])
+            auth.login(request, new_user)
+            return redirect('/')
+        else:
+            args['form'] = new_userform
+    return render_to_response('registration.html', args)
+
+
 def logout(request):
     auth.logout(request)
     return render(request, "logout.html")
 
-
-def testfunc(request):
-    return render(request, "login_complete.html")

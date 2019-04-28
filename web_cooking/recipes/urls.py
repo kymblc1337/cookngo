@@ -8,9 +8,9 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('test/', testfunc),
     url(r'^accounts/login', login),
     url(r'^accounts/logout', logout),
+    url(r'^accounts/reg', registration),
 ]
 
 #Add Django site authentication urls (for login, logout, password management)
