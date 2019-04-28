@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
+from django.conf.urls import url
+
+
+admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('recipes.urls'))
 ]
+
+#Add Django site authentication urls (for login, logout, password management)
