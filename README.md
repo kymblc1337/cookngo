@@ -3,7 +3,7 @@
 рецепты. У каждого зарегистрированного пользователя есть личный кабинет, куда 
 они смогут добавлять понравивишиеся рецепты.
 
-Презентация 1 - https://drive.google.com/drive/folders/11vaMJUZ0nm7tr35-o8QMQePVz10HjjPz
+Презентация 1 - https://docs.google.com/presentation/d/17g1KvzWLwetNSxWqsM67io9jXNPuk58hxXn8yOuYU30/edit?usp=sharing
 
 
 
