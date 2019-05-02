@@ -1,53 +1,60 @@
-// EventListener | @jon_neal | //github.com/jonathantneal/EventListener
-!window.addEventListener && window.Element && (function () {
-    function addToPrototype(name, method) {
-        Window.prototype[name] = HTMLDocument.prototype[name] = Element.prototype[name] = method;
+$('.slider').each(function(){    // если слайдеров несколько
+    let $this = $(this);
+    let $group = $this.find('.slide-group');
+    let $slides = $this.find('.slide');
+    let currentIndex = 0;
+    let timeout;
+    let backButton = $this.find('#backward');
+    let forButton = $this.find('#forward');
+    let flipSlide = '100%';  // для текущего слайда
+    let moveGroup = '-100%';  // для группы слайдов
+
+    function moveSlides(index) {
+        advance();
+
+        if($group.is(':animated') || currentIndex === index){
+            return;
+        }
+
+        $slides.eq(index).css({left: flipSlide, display: 'block'});
+        $group.animate({left: moveGroup},600, function(){
+            $slides.eq(currentIndex).css({display: 'none'});
+            $slides.eq(index).css({left: 0});
+            $group.css({left: 0});
+            currentIndex = index;
+        });
     }
 
-    var registry = [];
+    function advance(){
+        clearTimeout(timeout);
+        timeout = setTimeout(function(){
+            if (currentIndex < ($slides.length - 1)){
+                moveSlides(currentIndex + 1);
+            }else{
+                moveSlides(0);
+            }
+        }, 2600);
+    }
 
-    addToPrototype("addEventListener", function (type, listener) {
-        var target = this;
-
-        registry.unshift({
-            __listener: function (event) {
-                event.currentTarget = target;
-                event.pageX = event.clientX + document.documentElement.scrollLeft;
-                event.pageY = event.clientY + document.documentElement.scrollTop;
-                event.preventDefault = function () { event.returnValue = false };
-                event.relatedTarget = event.fromElement || null;
-                event.stopPropagation = function () { event.cancelBubble = true };
-                event.relatedTarget = event.fromElement || null;
-                event.target = event.srcElement || target;
-                event.timeStamp = +new Date;
-
-                listener.call(target, event);
-            },
-            listener: listener,
-            target: target,
-            type: type
-        });
-
-        this.attachEvent("on" + type, registry[0].__listener);
+    backButton.on('click',function(){
+        flipSlide = '-100%';
+        moveGroup = '100%';
+        if (currentIndex === 0){
+            moveSlides($slides.length - 1)
+        }else{
+            moveSlides(currentIndex - 1)
+        }
+        flipSlide = '100%';
+        moveGroup = '-100%';
     });
 
-    addToPrototype("removeEventListener", function (type, listener) {
-        for (var index = 0, length = registry.length; index < length; ++index) {
-            if (registry[index].target == this && registry[index].type == type && registry[index].listener == listener) {
-                return this.detachEvent("on" + type, registry.splice(index, 1)[0].__listener);
-            }
+    forButton.on('click',function(){
+        if (currentIndex === $slides.length - 1){
+            moveSlides(0)
+        }else{
+            moveSlides(currentIndex + 1)
         }
     });
 
-    addToPrototype("dispatchEvent", function (eventObject) {
-        try {
-            return this.fireEvent("on" + eventObject.type, eventObject);
-        } catch (error) {
-            for (var index = 0, length = registry.length; index < length; ++index) {
-                if (registry[index].target == this && registry[index].type == eventObject.type) {
-                    registry[index].call(this, eventObject);
-                }
-            }
-        }
-    });
-})();
+    advance();
+});

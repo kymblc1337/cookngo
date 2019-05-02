@@ -36,6 +36,7 @@ nav {
 	display: table;
 }
 
+
 nav div {
 	-webkit-transition: background 0.5s ease;
 	-moz-transition: background 0.5s ease;
@@ -88,6 +89,7 @@ nav h1{
    	background-color: #39b54a;
 }
 
+
 button, 
 button:active, 
 button:focus {
@@ -114,7 +116,7 @@ header {
 }
 
 .auth-block {
-	margin-right: 2%;
+	margin-right: 1%;
 	width: 40%;
 	justify-content: flex-end;
 }
@@ -258,10 +260,47 @@ header {
 	.add_recipe {
 		display: none;
 	}
+
+	.add_recipe_plus {
+		display: block;
+		margin-right: 3%;
+		margin-left: 2%;
+	}
 }
 
 @media (min-width: 1200px) {
 	.add_recipe {
 		display: block;
 	}
+
+	.add_recipe_plus {
+		display: none;
+	}
+
+}
+
+/* SLIDER*/
+
+.slide-viewer{
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    width: 800px;
+}
+
+.slide-group{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+
+.slide:first-child{
+    display: block;
 }
