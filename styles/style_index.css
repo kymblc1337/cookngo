@@ -1,0 +1,54 @@
+@font-face {
+	font-family: IntroInline;
+	src: url(../fonts/Intro-Black-Inline-Caps.ttf);
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	background: url(../img/background.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.head_margin {
+	margin: 0.1%;
+	margin-top: 9px;
+}
+
+.logo {
+	margin-right: 2%;
+}
+
+nav {
+	margin: 42px;
+}
+
+nav div {
+	display: inline-block;
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	height: 59px;
+	width: 154px;
+	color: white;
+	margin: 5px;
+	text-align: center;
+}
+
+nav div:hover {
+	background-color: white;
+	cursor: pointer;
+	color: black;
+}
+
+nav h1{
+	font-family: 'Archivo Black', sans-serif;
+	font-weight: bold;
+	font-size: 18pt;
+
+}
+
+.auth {
+	margin-top: 50px;
+}
