@@ -31,23 +31,28 @@ body {
 }
 
 nav {
+	align-items: center;
 	margin: 42px;
-	display: flex;
-
+	text-align: center;
+	display: table;
 }
 
 nav div {
-	display: flex;
-	align-items: baseline;
 	-webkit-transition: background 0.5s ease;
 	-moz-transition: background 0.5s ease;
 	transition: background 0.5s ease;
 	height: 59px;
+	display: table-cell;
+	vertical-align: middle;
 	width: 154px;
 	color: white;
 	margin: 5px;
+	text-align: center;
 }
 
+img[src="img/pointer_black.png"] {
+	display: none;
+}
 nav div:hover {
 	background-color: white;
 	cursor: pointer;
