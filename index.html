@@ -11,7 +11,7 @@
 	<title>Cook`n`go</title>
 </head>
 <body>
-	<header class = "container row head_margin">
+	<header class = "head_margin">
 		<div class = "logo"><img src="img/logo.jpg" alt="logo"></div>
 		<nav class="row">
 			<div>
@@ -23,13 +23,24 @@
 			<div><h1>О еде</h1></div>
 		</nav>
 		<div class="auth">
-			<img src="img/search.png" alt="">
+			<div id="sb-search" class="sb-search">
+		    	<form>
+			        <input class="sb-search-input" placeholder="Enter your search term..." type="search" value="" name="search" id="search">
+			        <input class="sb-search-submit" type="submit" value="">
+			        <span class="sb-icon-search"></span>
+		    	</form>
+			</div>
+
 			<button class="add_recipe">Добавить рецепт</button>
-			<img src="img/sasha.png" alt="">
-		</div>
+			<div class="profile_top"><img src="img/sasha.png" alt=""><img src="img/pointer_black.png" alt="black_pointer"></div>
 			
 		</div>	
 	</header>
+	<script src="js/classie.js"></script>
+	<script src="js/uisearch.js"></script>
+	<script>
+		new UISearch( document.getElementById( 'sb-search' ) );
+	</script>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
