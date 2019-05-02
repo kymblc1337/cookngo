@@ -30,17 +30,15 @@ body {
 	margin-top: 9px;
 }
 
-.logo {
-	margin-right: 2%;
-
-}
-
 nav {
 	margin: 42px;
+	display: flex;
+
 }
 
 nav div {
-	display: inline-block;
+	display: flex;
+	align-items: baseline;
 	-webkit-transition: background 0.5s ease;
 	-moz-transition: background 0.5s ease;
 	transition: background 0.5s ease;
@@ -48,7 +46,6 @@ nav div {
 	width: 154px;
 	color: white;
 	margin: 5px;
-	text-align: center;
 }
 
 nav div:hover {
@@ -70,9 +67,9 @@ nav h1{
 
 .add_recipe {
 	margin: 0 30px;
-	-webkit-transition: box-shadow 0.5s ease;
-	-moz-transition: box-shadow 0.5s ease;
-	transition: box-shadow 0.5s ease;
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
 	width: 233px;
 	height: 50px;
 	border: 3px solid #39b54a;
@@ -85,7 +82,7 @@ nav h1{
 }
 
 .add_recipe:hover{
-   	box-shadow: 0 0 40px 40px #39b54a inset;
+   	background-color: #39b54a;
 }
 
 button, 
@@ -100,6 +97,9 @@ button:focus {
 
 header {
 	display: flex;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-bottom: -5px;
 	border-bottom: 7px solid white;
 	justify-content: space-between;
 }
@@ -107,9 +107,11 @@ header {
 .navandlogo {
 	display: flex;
 	width: 42%;
+	margin-bottom: 0px;
 }
 
 .auth-block {
+	margin-right: 2%;
 	width: 40%;
 	justify-content: flex-end;
 }
@@ -123,7 +125,10 @@ header {
 }
 
 .profile_top {
-	display: inline-block;
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	display: flex;
 	width: 123px;
 }
 
