@@ -1,6 +1,20 @@
 @font-face {
-	font-family: IntroInline;
-	src: url(../fonts/Intro-Black-Inline-Caps.ttf);
+    font-family: 'IntroInline';
+    src: url('../fonts/IntroInline/intro-black-inline-caps-webfont.woff2') format('woff2'),
+         url('../fonts/IntroInline/intro-black-inline-caps-webfont.woff') format('woff'),
+         url('../fonts/IntroInline/Intro-Black-Inline-Caps.ttf') format('ttf');
+
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 body {
@@ -44,7 +58,7 @@ nav div:hover {
 }
 
 nav h1{
-	font-family: 'Archivo Black', sans-serif;
+	font-family: 'IntroInline';
 	font-weight: bold;
 	font-size: 18pt;
 
@@ -63,7 +77,7 @@ nav h1{
 	height: 50px;
 	border: 3px solid #39b54a;
 	background: transparent;
-	font-family: 'Archivo Black', sans-serif;
+	font-family: 'IntroInline';
 	font-weight: bold;
 	color: white;
 	font-size: 18pt;
@@ -74,24 +88,34 @@ nav h1{
    	box-shadow: 0 0 40px 40px #39b54a inset;
 }
 
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+
 .search{
 	background-image: url(../img/search.png);
 }
 
-.search:hover {
-
-}
-
-.auth {
-	
-}
-
 header {
 	display: flex;
+	border-bottom: 7px solid white;
+	justify-content: space-between;
+}
+
+.navandlogo {
+	display: flex;
+	width: 42%;
+}
+
+.auth-block {
+	width: 40%;
+	justify-content: flex-end;
 }
 
 .auth {
-	width: 52%;
+	width: 100%;
 	display: flex;
 	align-self: top;
 	justify-content: flex-end;
@@ -109,18 +133,6 @@ header {
 
 .profile_logo {
 	margin-right: 200px;
-}
-
-/* Search icon by IcoMoon, made with http://icomoon.io/app/ */
-@font-face {
-	font-family: 'icomoon';
-	src:url('../fonts/icomoon/icomoon.eot');
-	src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/icomoon/icomoon.woff') format('woff'),
-		url('../fonts/icomoon/icomoon.ttf') format('truetype'),
-		url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
 }
 
 .sb-search {
@@ -171,6 +183,9 @@ header {
 
 .sb-icon-search,
 .sb-search-submit  {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
 	width: 50px;
 	height: 50px;
 	display: block;
@@ -221,7 +236,7 @@ header {
 
 .sb-search.sb-search-open .sb-icon-search,
 .no-js .sb-search .sb-icon-search {
-	background: black;
+	background: #39b54a;
 	color: #fff;
 	z-index: 11;
 }
