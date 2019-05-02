@@ -126,8 +126,8 @@ header {
 .sb-search {
 	position: relative;
 	width: 0%;
-	min-width: 60px;
-	height: 60px;
+	min-width: 50px;
+	height: 50px;
 	float: right;
 	overflow: hidden;
 	-webkit-transition: width 0.3s;
@@ -147,39 +147,39 @@ header {
 	height: 60px;
 	margin: 0;
 	z-index: 10;
-	padding: 20px 65px 20px 20px;
+	padding: 10px 65px 20px 20px;
 	font-family: inherit;
 	font-size: 20px;
 	color: #2c3e50;
 }
 
 .sb-search-input::-webkit-input-placeholder {
-	color: #efb480;
+	color: #494949;
 }
 
 .sb-search-input:-moz-placeholder {
-	color: #efb480;
+	color: #494949;
 }
 
 .sb-search-input::-moz-placeholder {
-	color: #efb480;
+	color: #494949;
 }
 
 .sb-search-input:-ms-input-placeholder {
-	color: #efb480;
+	color: #494949;
 }
 
 .sb-icon-search,
 .sb-search-submit  {
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	display: block;
 	position: absolute;
 	right: 0;
 	top: 0;
 	padding: 0;
 	margin: 0;
-	line-height: 60px;
+	line-height: 50px;
 	text-align: center;
 	cursor: pointer;
 }
@@ -196,10 +196,10 @@ header {
 }
 
 .sb-icon-search {
-	color: #fff;
-	background: #e67e22;
+	color: black;
+	background: transparent;
 	z-index: 90;
-	font-size: 22px;
+	font-size: 30px;
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -221,7 +221,7 @@ header {
 
 .sb-search.sb-search-open .sb-icon-search,
 .no-js .sb-search .sb-icon-search {
-	background: #da6d0d;
+	background: black;
 	color: #fff;
 	z-index: 11;
 }
