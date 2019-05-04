@@ -1,8 +1,6 @@
 @font-face {
     font-family: 'IntroInline';
-    src: url('../fonts/IntroInline/Intro-Black-Inline-Caps.woff') format('woff'),
-         url('../fonts/IntroInline/Intro-Black-Inline-Caps.ttf') format('truetype');
-
+    src: url('../fonts/IntroInline/Intro-Black-Inline-Caps.otf') format('opentype');
 }
 
 @font-face {
@@ -62,18 +60,19 @@ nav div:hover{
 nav li{
 	font-family: 'IntroInline';
 	font-weight: bold;
-	font-size: 18pt;
+	font-size: 16px;
 }
 
 
 nav{
+	z-index: 100000;
 	height: 50px;
    padding: 0;
-	margin: 0;
+	margin-left: 125px;
 	position: absolute;
 }
 
-nav li 	{
+.nav li {
 	color: white;
 	height: auto;
 	width: 154px;
@@ -86,114 +85,32 @@ nav li 	{
   	margin-left:10px;
 }
 
-nav a{							
+.nav a {							
 	padding:13px;
 	text-decoration: none; 
-	color:black;
+	color:white;
 	display: block;
 }
-nav li ul{
+
+.nav li ul{
 	display: none;
 	height: auto;									
-	margin-left: -11px;
+	margin-left: -10px;
 	padding: 0;		
 }				
 
-nav li:hover ul{
+.nav li:hover ul{
 	display: block;
 }
 
-.navbar li ul li {
+.nav li:hover, a:hover {
+
+} 
+
+.nav li:hover a{
 	background-color: white;
-} 
-
-nav li:hover, a:hover {
-	 background: white;
-} 
-
-
-#ddmenu li { 
-	display: block;
-	position: relative; 
-	float: left;
-	margin: 12px;
-	margin-left: 0;
-	color: white; 
-}
-
-
-#ddmenu li a {
-  display: block;
-  float: left;
-  padding: 0 12px;
-  line-height: 78px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  font-size: 18px;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-#ddmenu li:not(:first-child) a {
 	color: black;
 }
-
-#ddmenu li:hover > a {
-	color: black;
-	background-color: white; 
-}
-
-#ddmenu ul {
-	z-index: 100000;
-  position: absolute;
-  top: 88px;
-  width: 150px;
-  background: #fff;
-  display: none;
-  margin: 0;
-  padding: 7px 0;
-  list-style: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-
-#ddmenu ul:before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  bottom: 100%;
-  left: 4px;
-  border-width: 0 10px 10px 10px;
-  border-style: solid;
-  border-color: rgba(0, 0, 0, 0.1) transparent;  
-}
-
-#ddmenu ul li { 
-  display: block; 
-  width: 100%; 
-  font-size: 0.9em; 
-	color: black;
-}
-
-#ddmenu ul li a {
-  display: block;
-  width: 100%;
-  padding: 0;
-  line-height: 1.4em;
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-#ddmenu ul li a:hover {
-  background: #e9edf3;
-}
-
 
 .auth {
 	margin-top: 50px;
@@ -212,7 +129,7 @@ nav li:hover, a:hover {
 	font-family: 'IntroInline';
 	font-weight: bold;
 	color: white;
-	font-size: 18pt;
+	font-size: 18px;
 }
 
 .add_recipe:hover{
