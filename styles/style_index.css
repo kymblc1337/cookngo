@@ -66,7 +66,15 @@ nav h1{
 	font-size: 18pt;
 }
 
-#ddmenu li { display: block; position: relative; float: left; font-size: 1.45em; text-shadow: 1px 1px 0 #fff; border-right: 1px solid #dae0e5; }
+#ddmenu li { 
+	display: block;
+	position: relative; 
+	float: left;
+	margin: 12px;
+	margin-left: 0;
+	color: white; 
+}
+
 
 #ddmenu li a {
   display: block;
@@ -75,13 +83,16 @@ nav h1{
   line-height: 78px;
   font-weight: bold;
   text-decoration: none;
-  color: #6c87c0;
+  color: white;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
-#ddmenu li:hover > a { color: #7180a0; background: #d9e2ee; }
+
+#ddmenu li:hover > a { 
+	color: black; 
+	background: white; }
 
 #ddmenu ul {
   position: absolute;
