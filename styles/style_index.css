@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'IntroInline';
-    src: url('../fonts/IntroInline/intro-black-inline-caps-webfont.woff2') format('woff2'),
-         url('../fonts/IntroInline/intro-black-inline-caps-webfont.woff') format('woff'),
+    src: url('../fonts/IntroInline/Intro-Black-Inline-Caps.woff') format('woff'),
          url('../fonts/IntroInline/Intro-Black-Inline-Caps.ttf') format('truetype');
 
 }
@@ -38,7 +37,7 @@ nav {
 }
 
 
-nav div {
+nav li {
 	-webkit-transition: background 0.5s ease;
 	-moz-transition: background 0.5s ease;
 	transition: background 0.5s ease;
@@ -60,11 +59,58 @@ nav div:hover{
 	cursor: pointer;
 	color: black;
 }
-nav h1{
+nav li{
 	font-family: 'IntroInline';
 	font-weight: bold;
 	font-size: 18pt;
 }
+
+
+nav{
+	height: 50px;
+   padding: 0;
+	margin: 0;
+	position: absolute;
+}
+
+nav li 	{
+	color: white;
+	height: auto;
+	width: 154px;
+	float: left;
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+  	margin-left:10px;
+}
+
+nav a{							
+	padding:13px;
+	text-decoration: none; 
+	color:black;
+	display: block;
+}
+nav li ul{
+	display: none;
+	height: auto;									
+	margin-left: -11px;
+	padding: 0;		
+}				
+
+nav li:hover ul{
+	display: block;
+}
+
+.navbar li ul li {
+	background-color: white;
+} 
+
+nav li:hover, a:hover {
+	 background: white;
+} 
+
 
 #ddmenu li { 
 	display: block;
@@ -84,42 +130,36 @@ nav h1{
   font-weight: bold;
   text-decoration: none;
   color: white;
+  font-size: 18px;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
-#ddmenu li:hover > a { 
-	color: black; 
-	background: white; }
+#ddmenu li:not(:first-child) a {
+	color: black;
+}
+
+#ddmenu li:hover > a {
+	color: black;
+	background-color: white; 
+}
 
 #ddmenu ul {
+	z-index: 100000;
   position: absolute;
   top: 88px;
-  width: 130px;
+  width: 150px;
   background: #fff;
   display: none;
   margin: 0;
   padding: 7px 0;
   list-style: none;
-  border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Стрелочки */
-#ddmenu ul:after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  bottom: 100%;
-  left: 8px;
-  border-width: 0 8px 8px 8px;
-  border-style: solid;
-  border-color: #fff transparent; 
-}
 
 #ddmenu ul:before {
   content: "";
@@ -137,13 +177,13 @@ nav h1{
   display: block; 
   width: 100%; 
   font-size: 0.9em; 
-  text-shadow: 1px 1px 0 #fff;
+	color: black;
 }
 
 #ddmenu ul li a {
   display: block;
   width: 100%;
-  padding: 6px 7px;
+  padding: 0;
   line-height: 1.4em;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -153,23 +193,7 @@ nav h1{
 #ddmenu ul li a:hover {
   background: #e9edf3;
 }
-.dropdown_ {
-	position: relative;
-}
 
-.dropdown_menu {
-	display: none;
-	flex-direction: column;
-}
-
-.dropdown_item {
-	border-bottom: 2px solid black;
-}
-
-.dropdown_:hover .dropdown_menu {
-	display: flex;
-	flex-direction: column;
-}
 
 .auth {
 	margin-top: 50px;
