@@ -334,10 +334,106 @@ header {
 /* SLIDER */
 
 .awSlider {
+	z-index: -1;
 	margin: 30px;
-	margin-top: 0;
+	margin-top: 10px;
 }
 
 main a[role="button"]:hover {
 	background: transparent;
+}
+
+
+input[type="text"] {
+  display: none;
+}
+.dropdown_cousine {
+  position: relative;
+  display: table;
+  margin: 10px auto;
+  color: #333;
+  min-width: 220px;
+}
+.dropdown_cousine a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-family: 'IntroInline';
+  background: transparent;
+  padding: 12px 20px 10px;
+  text-transform: uppercase;
+  border: 3px solid white;
+  font-size: .95em;
+  text-align: center;
+}
+.dropdown_cousine ul {
+  position: relative;
+  list-style: none;
+  background: #eee;
+  margin-top: 10px;
+  padding: 5px 0;
+  border-radius: 20px;
+  font-size: .9em;
+}
+.dropdown_cousine ul:before {
+  content: '';
+  position: absolute;
+  right: 20px;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7px 6px 7px;
+  border-color: transparent transparent #eeeeee transparent;
+}
+.dropdown_cousine ul li {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.dropdown_cousine ul li:last-child {
+  border: none;
+}
+.dropdown_cousine input[type="checkbox"] {
+  display: none;
+}
+.dropdown_cousine label {
+  display: block;
+  position: relative;
+  padding-left: 22px;
+  cursor: pointer;
+}
+.dropdown_cousine label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #666;
+  border-radius: 4px;
+}
+.dropdown_cousine input[type="checkbox"]:checked ~ label:before {
+  background: #666;
+}
+.dropdown_cousine label:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 12px;
+  top: -5px;
+  left: 6px;
+  border: 2px solid #fff;
+  box-shadow: 1px 2px 2px #555;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+.dropdown_cousine input[type="checkbox"]:checked ~ label:after {
+  opacity: 1;
+  visibility: visible;
 }
