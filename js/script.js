@@ -35,6 +35,7 @@ $(document).ready(function() {
   
 	  	var val_cont = document.createElement('div');
 	  	$(val_cont).addClass("dropdown_cousine");
+	  	$(val_cont).addClass("1s");
 
 	  	$(val_cont).append(ingredients_menu[i][1]);
 
@@ -49,9 +50,21 @@ $(document).ready(function() {
 	  	$(ul).hide();
 	}
 
-  	$(".dropdown_cousine a").on('click', function() {
-    	$(".dropdown_cousine ul").slideToggle('medium');
+  	$(".dropdown_cousine 1s a").on('click', function() {
+    	$(".dropdown_cousine 1s ul").slideToggle('medium');
   	});
+
+  	// $(".dropdown_cousine 1s a").on('click', function() {
+   //  	$(".dropdown_cousine 2s ul").slideToggle('medium');
+  	// });
+
+  	// $(".dropdown_cousine 2s a").on('click', function() {
+   //  	$(".dropdown_cousine 2s ul").slideToggle('medium');
+  	// });
+
+  	// $(".dropdown_cousine 3s a").on('click', function() {
+   //  	$(".dropdown_cousine 3s ul").slideToggle('medium');
+  	// });
   
   	$('.dropdown_cousine ul input[type="checkbox"]').on('click', function() {
 
