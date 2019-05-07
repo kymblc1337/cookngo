@@ -23,47 +23,31 @@ $(document).ready(function() {
 	    "val5": "Значение 5"
   	};
 
-  	var ingredients_menu = {
-	  	'[name="choose_cousine"]': "<a><span class='open'>Кухня</span><span class='value'></span></a>",
-	  	'[name="choose_menu"]': "<a><span class='open'>Кухня</span><span class='value'></span></a>",
-	  	'[name="choose_category"]': "<a><span class='open'>Кухня</span><span class='value'></span></a>",
-	  	'[name="choose_dish"]': "<a><span class='open'>Кухня</span><span class='value'></span></a>"
-	};
+  	var ingredients_menu = [
+	  	['[name="choose_cousine"]', ["<a href='javascript:void(0);'><span class='open'>Кухня</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}],
+	  	['[name="choose_menu"]', ["<a href='javascript:void(0);'><span class='open'>Меню</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}],
+	  	['[name="choose_category"]', ["<a href='javascript:void(0);'><span class='open'>Категория</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}],
+	  	['[name="choose_dish"]', ["<a href='javascript:void(0);'><span class='open'>Блюдо</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}]
+	];
 
-	for (elem in ingredients_menu) {
-		var input = $('[name="choose_cousine"]');
+	for (var i = 0; i < ingredients_menu.length; i++) {
+		var input = $(ingredients_menu[i][0]);
   
 	  	var val_cont = document.createElement('div');
 	  	$(val_cont).addClass("dropdown_cousine");
 
-	  	$(val_cont).append("<a href='javascript:void(0);'><span class='open'>Кухня</span><span class='value'></span></a>");
+	  	$(val_cont).append(ingredients_menu[i][1]);
 
 	  	var ul = document.createElement('ul');
 	  	$(ul).addClass("choose_cousine_menu");
-	  	for (elem in val_data) {
+	  	for (elem in ingredients_menu[i][2]) {
 	    	$(ul).append("<li><input type='checkbox' value='" + elem + "' id='" + elem + "'><label for='" + elem + "'>" + val_data[elem] + "</label></li>");
 	  	}
 	  	$(ul).appendTo(val_cont);
 
 	  	$(input).after(val_cont);
+	  	$(ul).hide();
 	}
-
-  	var input = $('[name="choose_cousine"]');
-  
-  	var val_cont = document.createElement('div');
-  	$(val_cont).addClass("dropdown_cousine");
-
-  	$(val_cont).append("<a href='javascript:void(0);'><span class='open'>Кухня</span><span class='value'></span></a>");
-
-  	var ul = document.createElement('ul');
-  	$(ul).addClass("choose_cousine_menu");
-  	for (elem in val_data) {
-    	$(ul).append("<li><input type='checkbox' value='" + elem + "' id='" + elem + "'><label for='" + elem + "'>" + val_data[elem] + "</label></li>");
-  	}
-  	$(ul).appendTo(val_cont);
-  	$(ul).hide();
-
-  	$(input).after(val_cont);
 
   	$(".dropdown_cousine a").on('click', function() {
     	$(".dropdown_cousine ul").slideToggle('medium');

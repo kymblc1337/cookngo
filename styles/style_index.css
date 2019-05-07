@@ -346,9 +346,17 @@ main a[role="button"]:hover {
 input[type="text"] {
   display: none;
 }
+
+.ingredients_choice {
+	margin-top: 100px;
+}
+
 .dropdown_cousine {
-  display: table;
+  display: table-cell;
   color: #333;
+  padding: 16px;
+  padding-left: 0;
+  padding-bottom: 5px;
   margin-top: 10px;
   min-width: 144px;
   height: 44px;
