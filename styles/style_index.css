@@ -347,13 +347,22 @@ input[type="text"] {
   display: none;
 }
 
+.white-bg {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	background-color: white;
+	color: black;
+}
+
 .ingredients_choice {
-	margin-top: 100px;
+	margin-top: 0px;
 }
 
 .dropdown_cousine {
   display: table-cell;
   color: #333;
+  position: relative;
   padding: 16px;
   padding-left: 0;
   padding-bottom: 5px;
@@ -374,12 +383,17 @@ input[type="text"] {
   text-align: center;
 }
 .dropdown_cousine ul {
-  position: relative;
+  position: absolute;
   list-style: none;
+  left: 0;
+  right: 0;
+  border: 2px solid green;
   background: white;
   margin-top: 10px;
+  margin-right: 15px;
   padding: 5px 0;
   font-size: .9em;
+  z-index: 5;
 }
 
 .dropdown_cousine ul li {

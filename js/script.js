@@ -35,7 +35,7 @@ $(document).ready(function() {
   
 	  	var val_cont = document.createElement('div');
 	  	$(val_cont).addClass("dropdown_cousine");
-	  	$(val_cont).addClass("1s");
+	  	$(val_cont).addClass(i + "s");
 
 	  	$(val_cont).append(ingredients_menu[i][1]);
 
@@ -50,22 +50,30 @@ $(document).ready(function() {
 	  	$(ul).hide();
 	}
 
-  	$(".dropdown_cousine 1s a").on('click', function() {
-    	$(".dropdown_cousine 1s ul").slideToggle('medium');
+  	$(".1s a").on('click', function() {
+    	$(".1s ul").slideToggle('medium');
+    	$(".1s ul").addClass("white-bg")
   	});
 
-  	// $(".dropdown_cousine 1s a").on('click', function() {
-   //  	$(".dropdown_cousine 2s ul").slideToggle('medium');
-  	// });
+  	$(".0s a").on('click', function() {
+    	$(".0s ul").slideToggle('medium');
+    	$(".0s ul").addClass("white-bg")
+  	});
 
-  	// $(".dropdown_cousine 2s a").on('click', function() {
-   //  	$(".dropdown_cousine 2s ul").slideToggle('medium');
-  	// });
+  	$(".2s a").on('click', function() {
+    	$(".2s ul").slideToggle('medium');
+    	$(".2s ul").addClass("white-bg")
+  	});
 
-  	// $(".dropdown_cousine 3s a").on('click', function() {
-   //  	$(".dropdown_cousine 3s ul").slideToggle('medium');
-  	// });
-  
+  	$(".3s a").on('click', function() {
+    	$(".3s ul").slideToggle('medium');
+    	$(".3s ul").addClass("white-bg")
+  	});
+
+
+
+
+
   	$('.dropdown_cousine ul input[type="checkbox"]').on('click', function() {
 
     var title_val = $(this).closest('.dropdown_cousine ul').find('input[type="checkbox"]').val(),
