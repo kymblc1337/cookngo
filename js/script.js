@@ -25,7 +25,7 @@ $(document).ready(function() {
   	var ingredients_menu = [
 	  	['[name="choose_cousine"]', ["<a href='javascript:void(0);'><span class='open'>Кухня</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}],
 	  	['[name="choose_menu"]', ["<a href='javascript:void(0);'><span class='open'>Меню</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}],
-	  	['[name="choose_category"]', ["<a href='javascript:void(0);'><span class='open'>Категория</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}],
+	  	['[name="choose_category"]', ["<a href='javascript:void(0);'><span class='open'>Категория</span><span class='value'></a>"],{"first": "1", "second": "2", "third": "3"}],
 	  	['[name="choose_dish"]', ["<a href='javascript:void(0);'><span class='open'>Блюдо</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}]
 	];
 
@@ -48,6 +48,10 @@ $(document).ready(function() {
 	  	$(input).after(val_cont);
 	  	$(ul).hide();
 	}
+
+	var ingredients_dropdown = document.createElement('div')
+	$(ingredients_dropdown).addClass("dropdown_cousine"); 
+	$(ingredients_dropdown).addClass("dropdown_ingredients");
 
   	$(".1s a").on('click', function() {
     	$(".1s ul").slideToggle('medium');
