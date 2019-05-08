@@ -4,3 +4,4 @@ from .models import *
 
 
 admin.site.register(add_recipe)
+admin.site.register(Category)

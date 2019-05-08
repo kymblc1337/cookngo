@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 class Category(models.Model):
     title = models.CharField(max_length = 255 )
+    def __str__(self):
+        return self.title
 
 
 class add_recipe(models.Model):
@@ -12,3 +14,5 @@ class add_recipe(models.Model):
     image = models.ImageField(blank = True)
     category = models.ForeignKey(Category, null = True, blank= True,
                                  on_delete=models.SET_NULL)
+    def __str__(self):
+        return self.title

@@ -5,6 +5,10 @@
     <title>ok</title>
 </head>
 <body>
-    <h2>{{category.name}}</h2>
+    {%for cat in cats %}
+    <ul>
+        <li>{{ cat.title }}</li>
+    </ul>
+    {% endfor %}
 </body>
 </html>
