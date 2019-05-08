@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Posts</title>
+</head>
+<body>
+{% for obj in post_list %}
+<a href='{% url "detail" id=obj.id %}'>{{ obj.title }}</a><br>
+
+{% endfor %}
+</body>
+</html>
