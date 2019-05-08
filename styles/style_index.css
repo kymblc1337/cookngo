@@ -348,15 +348,20 @@ input[type="text"] {
 }
 
 .white-bg {
-	-webkit-transition: background 0.5s ease;
-	-moz-transition: background 0.5s ease;
-	transition: background 0.5s ease;
 	background-color: white;
 	color: black;
 }
 
 .ingredients_choice {
 	margin-top: 0px;
+}
+
+.dropdown_cousine a:hover {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	background-color: white;
+	color: black;
 }
 
 .dropdown_cousine {
@@ -371,23 +376,26 @@ input[type="text"] {
   height: 44px;
 }
 .dropdown_cousine a {
-  display: block;
-  text-decoration: none;
-  color: #fff;
-  font-family: 'IntroInline';
-  background: transparent;
-  padding: 12px 20px 10px;
-  text-transform: uppercase;
-  border: 3px solid white;
-  font-size: 18px;
-  text-align: center;
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+  	display: block;
+  	text-decoration: none;
+  	color: #fff;
+  	font-family: 'IntroInline';
+  	background-color: transparent;
+ 	padding: 12px 20px 10px;
+ 	text-transform: uppercase;
+ 	border: 3px solid white;
+  	font-size: 18px;
+  	text-align: center;
 }
 .dropdown_cousine ul {
   position: absolute;
   list-style: none;
   left: 0;
   right: 0;
-  border: 2px solid green;
+  border: 2px solid black;
   background: white;
   margin-top: 10px;
   margin-right: 15px;
@@ -417,7 +425,7 @@ input[type="text"] {
   content: '';
   position: absolute;
   left: 0;
-  top: 0;
+  top: 4px;
   width: 15px;
   height: 15px;
   border: 2px solid black;

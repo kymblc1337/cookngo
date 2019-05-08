@@ -12,8 +12,7 @@ $('section.awSlider .carousel').on('slid.bs.carousel', function () {
 
 // Choosing ingredients
 
-$(document).ready(function() {
-
+$(document).ready(function() {	
   // Добавляем значения
   	var val_data = {
 	    "val1": "Значение 1",
@@ -52,22 +51,21 @@ $(document).ready(function() {
 
   	$(".1s a").on('click', function() {
     	$(".1s ul").slideToggle('medium');
-    	$(".1s ul").addClass("white-bg")
   	});
 
   	$(".0s a").on('click', function() {
     	$(".0s ul").slideToggle('medium');
-    	$(".0s ul").addClass("white-bg")
+    	$(".0s a").toggleClass("white-bg");
   	});
 
   	$(".2s a").on('click', function() {
     	$(".2s ul").slideToggle('medium');
-    	$(".2s ul").addClass("white-bg")
+    	$(".2s a").toggleClass("white-bg");
   	});
 
   	$(".3s a").on('click', function() {
     	$(".3s ul").slideToggle('medium');
-    	$(".3s ul").addClass("white-bg")
+    	$(".3s a").toggleClass("white-bg");
   	});
 
 
