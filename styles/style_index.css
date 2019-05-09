@@ -101,7 +101,6 @@ img[src="img/pointer_black.png"] {
 }			
 
 .nav li:hover ul{
-	display: block;
 }
 .menu:hover a{
 	color: black;

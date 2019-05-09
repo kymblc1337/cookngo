@@ -72,19 +72,32 @@ $(document).ready(function() {
     	$(".3s a").toggleClass("white-bg");
   	});
 
+  	$(".2n ul").hide();
+
   	$(".1n").hover( function() {
-    	$(".1n ul").slideDown('medium');
+    	$(".1n ul").slideToggle('medium');
   	} , function() {
-  		$(".1n ul").slideUp("medium");
+  		$(".1n ul").slideToggle("medium", function() {
+  			$(".1n ul").hide();
+  		});
   	});
 
   	$(".2n").hover( function() {
     	$(".2n ul").slideToggle('medium');
+  	} , function() {
+  		$(".2n ul").slideToggle("medium", function() {
+  			$(".2n ul").hide();
+  		});
   	});
 
   	$(".3n").hover( function() {
-    	$(".3n ul").hide();
+    	$(".3n ul").slideToggle('medium');
+  	} , function() {
+  		$(".3n ul").slideToggle("medium", function() {
+  			$(".3n ul").hide();
+  		});
   	});
+
 
 
 
