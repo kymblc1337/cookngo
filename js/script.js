@@ -72,6 +72,19 @@ $(document).ready(function() {
     	$(".3s a").toggleClass("white-bg");
   	});
 
+  	$(".1n").hover( function() {
+    	$(".1n ul").slideDown('medium');
+  	} , function() {
+  		$(".1n ul").slideUp("medium");
+  	});
+
+  	$(".2n").hover( function() {
+    	$(".2n ul").slideToggle('medium');
+  	});
+
+  	$(".3n").hover( function() {
+    	$(".3n ul").hide();
+  	});
 
 
 
