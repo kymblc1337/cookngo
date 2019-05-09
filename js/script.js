@@ -49,7 +49,7 @@ $(document).ready(function() {
 	  	$(ul).hide();
 	}
 
-	var ingredients_dropdown = document.createElement('div')
+	var ingredients_dropdown = document.createElement('div');
 	$(ingredients_dropdown).addClass("dropdown_cousine"); 
 	$(ingredients_dropdown).addClass("dropdown_ingredients");
 
