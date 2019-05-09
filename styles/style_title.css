@@ -1,0 +1,16 @@
+@font-face{
+
+font-family: Devroye;
+src: url('../fonts/devroye/devroye.woff') format('woff');
+
+}
+
+pre{
+	font-family: Devroye;
+	font-style: italic;
+	font-size: 30px;
+	color:white;
+}
+.quot{
+	margin:400px 500px 20px 20px;
+}
