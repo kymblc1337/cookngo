@@ -1,5 +1,4 @@
 .distractful{overflow:hidden;}
-.distractful:hover{cursor: pointer; cursor: hand;}
 .distractful-item{background-position: center center;background-size: cover;position:absolute;overflow: hidden}
 .distractful-item img{display:none;}
 
@@ -73,5 +72,9 @@ body.distractful-body{overflow-x:hidden }
     text-indent: -9999px;
     transition: box-shadow .3s ease,background-color .3s ease;
 
+}
+body{
+
+	margin-top: 0px;
 }
 .distractful-pager.active{background-color: rgba(255,255,255,.3);}

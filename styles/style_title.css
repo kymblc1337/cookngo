@@ -14,3 +14,75 @@ pre{
 .quot{
 	margin:400px 500px 20px 20px;
 }
+.logo{
+	left:70px;
+	top:20px;
+	width:200%;
+	position: absolute;
+	z-index: 10;
+}
+.main-menu{
+	left:40px;
+	top: 150px;
+	position:absolute;
+	z-index: 10;
+	
+
+}
+.sub-menu{
+	left:280px;
+	top:16px;
+	position:absolute;
+	z-index: 10;
+	display: none;
+}
+li:hover .sub-menu{
+	display: block;
+}
+
+a{
+	font-size: 25px;
+	color:white;
+	font-family:Devroye;
+	text-decoration:none;
+}
+li{
+	width:230px;
+	padding:5px 15px;
+	list-style: none;
+}
+li:hover{
+	background-color: #e5e5e5;
+}
+li:hover a{
+	font-weight: bold;
+	color:black;
+}
+	
+li:hover>a:after{
+	content:"▶";
+	margin-left: 20px;
+}
+
+li:hover .sub-menu a{
+	color:black;
+}
+
+li:hover .sub-menu li{
+	background-color: #e5e5e5;
+	border-bottom: 2px solid #A9A9A9;
+	width:160px;
+}
+
+li:hover .sub-menu li:hover{
+	background-color:#A9A9A9;
+}
+.auetinf{
+	position: absolute;
+	z-index: 10;
+	top:50px;
+	right:50px;
+}
+.auentif a{
+	color:white;
+}
