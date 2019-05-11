@@ -23,6 +23,7 @@ body {
 	background-attachment: fixed;
 }
 
+
 .head_margin {
 	margin: 0.1%;
 	margin-top: 9px;
@@ -108,8 +109,12 @@ img[src="img/pointer_black.png"] {
 
 .navbar li ul li {
 	background-color: white;
-	 border: 3px solid black;
 } 
+
+.menu ul li {
+	border-bottom: 2px solid black;
+}
+
 
 .nav li:hover, a:hover {
 	-webkit-transition: background 0.5s ease;
@@ -396,21 +401,20 @@ input[type="text"] {
   	text-align: center;
 }
 .dropdown_cousine ul {
-  position: absolute;
   list-style: none;
-  left: 0;
-  right: 0;
   border: 2px solid black;
   background: white;
   margin-top: 10px;
   margin-right: 15px;
   padding: 5px 0;
   font-size: .9em;
-  z-index: 5;
+  width: 100%;
 }
 
 .dropdown_cousine ul li {
-  padding: 10px 14px;
+  padding-top: 10px;
+  padding-left: 14px;
+  padding-bottom: 10px;
   border-bottom: 2px solid black;
 }
 .dropdown_cousine ul li:last-child {
