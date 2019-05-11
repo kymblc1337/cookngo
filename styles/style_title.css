@@ -30,14 +30,27 @@ pre{
 
 }
 .sub-menu{
-	left:280px;
+	left:290px;
 	top:16px;
 	position:absolute;
 	z-index: 10;
 	display: none;
+	width:150px;
+}
+.second{
+	top:64px;
+}
+.third{
+	top:112px;
+}
+.fourth{
+	top:160px;
 }
 li:hover .sub-menu{
 	display: block;
+	background: rgba(86,86,86,0.85);
+	border:2px solid #A9A9A9;
+	border-radius: 0 30px 30px 30px;
 }
 
 a{
@@ -47,19 +60,20 @@ a{
 	text-decoration:none;
 }
 li{
-	width:230px;
+	width:220px;
 	padding:5px 15px;
 	list-style: none;
 }     
-li:hover{
+.main-menu>ul>li:hover{
 	background-color: #e5e5e5;
+
 }
 li:hover a{
 	font-weight: bold;
 	color:black;
 }
-	
-li:hover>a:after{
+
+.main-menu>ul>li:hover>a:after{
 	content:"▶";
 	margin-left: 20px;
 }
@@ -69,7 +83,8 @@ li:hover .sub-menu a{
 }
 
 li:hover .sub-menu li{
-	width:160px;
+	width:150px;
+	margin-left:-30px;
 }
 
 li:hover .sub-menu a:hover{
