@@ -50,7 +50,7 @@ li{
 	width:230px;
 	padding:5px 15px;
 	list-style: none;
-}
+}     
 li:hover{
 	background-color: #e5e5e5;
 }
@@ -65,24 +65,31 @@ li:hover>a:after{
 }
 
 li:hover .sub-menu a{
-	color:black;
+	color:white;
 }
 
 li:hover .sub-menu li{
-	background-color: #e5e5e5;
-	border-bottom: 2px solid #A9A9A9;
 	width:160px;
 }
 
-li:hover .sub-menu li:hover{
-	background-color:#A9A9A9;
+li:hover .sub-menu a:hover{
+	font-family:Devroye;
+	font-style:italic;
 }
 .auetinf{
 	position: absolute;
 	z-index: 10;
 	top:50px;
 	right:50px;
+	
 }
-.auentif a{
-	color:white;
+.auetinf a{color:white;font-family:Devroye;padding:15px;}
+button:hover{
+	background-color:#00a86b;
 }
+button{
+	background: rgba(86,86,86,0.85);
+	border-radius: 50px;
+	border:2px solid #A9A9A9;
+}
+
