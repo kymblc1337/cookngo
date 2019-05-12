@@ -10,5 +10,26 @@
         <li>{{ cat.title }}</li>
     </ul>
     {% endfor %}
+    {%  for recipe in object_list %}
+    <ul>
+        <li><a href = #>{{   recipe.title }}</a> </li>
+    </ul>
+    {% endfor %}
+    <div>
+        <span>
+            {% if page_obj.has_previous %}
+                <a href="#">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="#">next</a>
+            {% endif %}
+
+        </span>
+    </div>
 </body>
 </html>

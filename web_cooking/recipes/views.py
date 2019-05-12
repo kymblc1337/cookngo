@@ -4,7 +4,7 @@ from .models import Category, add_recipe
 
 
 class RecipesListView(ListView):
-    template_name = "index.html"
+    template_name = "recipes\index.html"
     paginate_by = 2
     cat = None
     def get_context_data(self,  **kwargs):
@@ -13,7 +13,7 @@ class RecipesListView(ListView):
         context["category"] = Category.objects.first()
         return context
     def get_queryset(self):
-        return add_recipe.objects.filter(category = self.cat).order_by("title")
+        return add_recipe.objects.all()
 
     
 
