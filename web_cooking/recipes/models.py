@@ -6,6 +6,15 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
+class Kitchen(models.Model):
+    title = models.CharField(max_length = 255)
+    def __str__(self):
+        return self.title
+
+class Menu(models.Model):
+    title = models.CharField(max_length = 255)
+    def __str__(self):
+        return self.title
 
 class add_recipe(models.Model):
     title = models.CharField(max_length = 255, help_text ='Название рецепта:')
@@ -14,5 +23,9 @@ class add_recipe(models.Model):
     image = models.ImageField(blank = True)
     category = models.ForeignKey(Category, null = True, blank= True,
                                  on_delete=models.SET_NULL)
+    kitchen = models.ForeignKey(Kitchen, null = True, blank= True,
+                                on_delete=models.SET_NULL)
+    menu = models.ForeignKey(Menu, null = True, blank = True,
+                             on_delete = models.SET_NULL)
     def __str__(self):
         return self.title

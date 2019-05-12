@@ -5,11 +5,14 @@
     <title>ok</title>
 </head>
 <body>
+    <table>
+    <tr>
     {%for cat in cats %}
-    <ul>
-        <li>{{ cat.title }}</li>
-    </ul>
-    {% endfor %}
+        <tr>{{ cat.title }}</tr>
+        {% endfor %}
+    </tr>
+    </table>
+
     {%  for recipe in object_list %}
     <ul>
         <li><a href = #>{{   recipe.title }}</a> </li>
@@ -18,7 +21,7 @@
     <div>
         <span>
             {% if page_obj.has_previous %}
-                <a href="#">previous</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
             {% endif %}
 
             <span class="current">
@@ -26,7 +29,7 @@
             </span>
 
             {% if page_obj.has_next %}
-                <a href="#">next</a>
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
             {% endif %}
 
         </span>
