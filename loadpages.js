@@ -1,19 +1,31 @@
-var xhr = new XMLHttpRequest();
-xhr.onload = function(){
-    if(xhr.status===200){
-        document.getElementById('content').innerHTML=xhr.responseText;
-    }
-};
-xhr.open('GET','tag1.html',true);
-xhr.send(null);
+let xhr1 = new XMLHttpRequest();
+xhr1.open('GET','tag1.html',true);
+xhr1.send(null);
+xhr.onload = function() { alert( this.responseText ); };
+xhr.onerror = function() { alert( 'Ошибка ' + this.status ); };
+xhr.send();
 
-$('nav a').on('click',function(e){
+let xhr2 = new XMLHttpRequest();
+xhr2.open('GET','tag2.html',true);
+xhr2.send(null);
+xhr.onload = function() { alert( this.responseText ); };
+xhr.onerror = function() { alert( 'Ошибка ' + this.status ); };
+xhr.send();
+
+let xhr3 = new XMLHttpRequest();
+xhr3.open('GET','tag3.html',true);
+xhr3.send(null);
+xhr.onload = function() { alert( this.responseText ); };
+xhr.onerror = function() { alert( 'Ошибка ' + this.status ); };
+xhr.send();
+
+$('nav a').on('click',null, null,function(e){
     e.preventDefault();
-    let url=this.href;
+    var url=this.href;
 
     $('nav a.current').removeClass('current');
     $(this).addClass('current');
     $('#container').remove();
 
-    $('#content').load(url+' #content');
+    $('#content').load(url);
 });
