@@ -1,0 +1,30 @@
+.slide-viewer{
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    width: 800px;
+}
+
+.slide-group{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+}
+
+.slide:first-child{
+    display: block;
+}
+
+.controls{
+    padding: 12px 16px;
+    font-size: 24px;
+    background-color: white;
+    color: #444;
+}
