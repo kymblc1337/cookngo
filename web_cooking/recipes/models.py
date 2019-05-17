@@ -7,7 +7,7 @@ class Add_recipe(models.Model):
     description = models.TextField(help_text='Описание рецепта')
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     date = models.DateTimeField(auto_now_add=True, auto_now=False)
-    image = models.ImageField(blank=True)
+    image = models.ImageField(upload_to='articles/', width_field=100,height_field=100)
     def __unicode__(self):
         return self.title
 
