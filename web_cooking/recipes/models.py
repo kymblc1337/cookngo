@@ -16,7 +16,7 @@ class Menu(models.Model):
     def __str__(self):
         return self.title
 
-class add_recipe(models.Model):
+class Recipe(models.Model):
     title = models.CharField(max_length = 255, help_text ='Название рецепта:')
     description = models.TextField(max_length = 255, help_text= 'Описание рецепта')
     date = models.DateTimeField(auto_now_add=True)
