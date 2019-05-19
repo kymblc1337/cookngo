@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from faker import  Faker
-from tracebackinc.web_cooking.recipes.models import Recipe, Category, Kitchen, Menu
+from recipes.models import Recipe, Category, Kitchen, Menu
 import random
 import datetime
 
@@ -8,7 +8,7 @@ faker = Faker('ru_RU')
 
 
 def generate_title():
-    return faker.sentence(max_nb_words = 3)
+    return faker.sentence(nb_words = 3)
 
 
 
@@ -59,7 +59,7 @@ def generate_date():
     day = random.randint(1,30)
     return datetime.date(year, month, day)
 
-class Command_data(BaseCommand):
+class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
@@ -84,4 +84,5 @@ class Command_data(BaseCommand):
                 date = my_date
             )
 
-        recipe.save()
+            recipe.save()
+        self.stdout.write(self.style.SUCCESS('Data imported successfully'))

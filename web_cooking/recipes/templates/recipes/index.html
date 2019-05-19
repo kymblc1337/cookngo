@@ -5,7 +5,12 @@
     <title>ok</title>
 </head>
 <body>
-    <table>
+
+<form method="GET" action="">
+    <input type="search" name = "title_contains" placeholder="Поиск..."/>
+</form>
+
+<table>
     <tr>
     {%for cat in cats %}
         <tr>{{ cat.title }}</tr>
