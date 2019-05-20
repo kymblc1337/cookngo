@@ -25,7 +25,8 @@ admin.autodiscover()
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('recipes.urls'))
+    path('', include('recipes.urls')),
+
 ]
 
 #Add Django site authentication urls (for login, logout, password management)
