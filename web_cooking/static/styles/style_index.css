@@ -13,6 +13,13 @@
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'avantgardectt';
+	src:url('../fonts/avantgrande/avantgardectt.ttf') format('truetype');
+}
+
+
  a:link, a:visited,a:hover,a:active,a:focus{text-decoration: none;}
 
 body {
@@ -528,6 +535,9 @@ input[type="text"] {
 }
 
 .recipe_block p {
+	font-family: 'avantgardectt';
+	text-align: left;
+	font-weight: bold;
 	font-size: 14px;
-	display: none;
+	display: noe;
 }
