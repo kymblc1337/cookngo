@@ -17,10 +17,10 @@ class Menu(models.Model):
         return self.title
 
 class Recipe(models.Model):
-    title = models.CharField(max_length = 255, help_text ='Название рецепта:')
+    title = models.CharField(max_length = 255,help_text ='Название рецепта:')
     description = models.TextField(max_length = 255, help_text= 'Описание рецепта')
     date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(blank = True)
+    image = models.ImageField(blank = True, upload_to='recipes_img/')
     category = models.ForeignKey(Category, null = True, blank= True,
                                  on_delete=models.SET_NULL)
     kitchen = models.ForeignKey(Kitchen, null = True, blank= True,

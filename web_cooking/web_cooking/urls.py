@@ -20,7 +20,6 @@ from django.conf.urls import url, include
 from django.urls import include
 from django.conf.urls import url
 
-
 admin.autodiscover()
 
 urlpatterns = [
