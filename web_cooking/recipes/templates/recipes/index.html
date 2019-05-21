@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="ru">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -109,14 +110,12 @@
 		</section>
         <div class="container recipes_main">
         {%  for recipe in object_list %}
-            <a href="{{ recipe.link }}">
-                <div class="recipe_block">
-                    <img src="{{ recipe.image }}" alt="">
-                    <h2>{{ recipe.title }}</h2>
-                    <p>{{ recipe.description }}</p>
+            <div class="recipe_block">
+                <div class="recipe_img">{{ recipe.image }}</div>
+                <h2>{{ recipe.title }}</h2>
+                <p>{{ recipe.description }}</p>
 
-                </div>
-            </a>
+            </div>
          {% endfor %}
         </div>
 	</section>
