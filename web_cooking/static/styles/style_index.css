@@ -481,7 +481,6 @@ input[type="text"] {
 	transition: background 0.5s ease;
 	border: 3px solid white;
 	width: 185px;
-	height: 28px;
 	margin: 0 12px;
 	background: transparent;
 	color: white;
@@ -495,6 +494,7 @@ input[type="text"] {
 }
 
 .sort h3{
+	margin: 12px 0;
 	font-size: 18px;
 }
 
@@ -507,8 +507,27 @@ input[type="text"] {
 }
 
 .recipe_block {
+	text-align: center;
+	border: 2px solid green;
+	width: 302px;
+	padding: 7px;
+	margin-right: 2px;
 }
 .recipe_block img{
-	width: 301px;
-	height: 225px;
+	width: 290px;
+	height: 220px;
+}
+
+.recipes_hidden{
+	display: flex;
+}
+
+.recipe_block h2{
+	margin-top: 12px;
+	font-size: 18px;
+}
+
+.recipe_block p {
+	font-size: 14px;
+	display: none;
 }

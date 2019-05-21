@@ -118,7 +118,8 @@
                     <button class="date">Дате публикации</button>
                 </div>
             </div>
-            {%  for recipe in object_list %}
+            <div class="recipes_hidden">
+                {%  for recipe in object_list %}
                 <div class="recipe_block">
     {#                {% if recipe.image %}#}
     {#                    <img src="{{ MEDIA_URL }}{{ recipe.image.url }}">#}
@@ -128,7 +129,9 @@
                     <p>{{ recipe.description }}</p>
 
                 </div>
-         {% endfor %}
+                {% endfor %}
+            </div>
+
         </div>
 	</section>
 	</main>
