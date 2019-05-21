@@ -111,6 +111,12 @@
         <div class="container recipes_main">
             <div class="sortmenu">
                 <h2>Еженедельная подборка</h2>
+                <div class="sort">
+                    <h3>Сортировка по:</h3>
+                    <button class="popularity">Популярности</button>
+                    <button class="rating">Рейтингу</button>
+                    <button class="date">Дате публикации</button>
+                </div>
             </div>
             {%  for recipe in object_list %}
                 <div class="recipe_block">
