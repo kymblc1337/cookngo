@@ -514,13 +514,15 @@ input[type="text"] {
 }
 
 .recipe_block {
+	-webkit-transition: background 0.4s ease;
+	-moz-transition: background 0.4s ease;
+	transition: background 0.4s ease;
 	text-align: center;
-	border: 2px solid green;
 	width: 350px;
 	padding: 7px;
 }
 .recipe_block img{
-	width: 290px;
+	width: 320px;
 	height: 220px;
 }
 
@@ -541,6 +543,20 @@ input[type="text"] {
 	letter-spacing: 2px;
 	font-size: 14px;
 	display: none;
+}
+
+.recipe_block:hover {
+	cursor: pointer;
+	background-color: white;
+	color: black;
+}
+
+.recipe_block:hover .recipe_info{
+	border: 2px solid black;
+}
+
+.recipe_block:hover .info_name{
+	border-bottom: 1px solid black;
 }
 
 .recipe_info {
