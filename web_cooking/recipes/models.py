@@ -9,13 +9,19 @@ class Add_recipe(models.Model):
     date = models.DateTimeField(auto_now_add=True, auto_now=False)
     image = models.ImageField(upload_to='articles/')
     DIFFICULTY = (
-        ('Очень легко','Очень легко'),
-        ('Легко', 'Легко'),
-        ('Нормально','Нормально'),
-        ('Сложно','Сложно'),
-        ('Очень сложно','Очень сложно'),
+        ('1','1'),
+        ('2', '2'),
+        ('3','3'),
         )
-    diff = models.CharField(max_length=100, choices=DIFFICULTY, null = True)
+    RATE = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+    )
+    diff = models.IntegerField(choices=DIFFICULTY, null = True)
+    rat = models.IntegerField(choices=RATE, null = True)
     likes = models.IntegerField(default='0')
     dislikes = models.IntegerField(default='0')
     def __unicode__(self):
