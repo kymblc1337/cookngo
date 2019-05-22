@@ -540,9 +540,11 @@ input[type="text"] {
 .recipe_block p {
 	font-family: 'avantgardectt';
 	text-align: left;
+	margin-right: 8px;
+	margin-left: 10px;
 	letter-spacing: 2px;
 	font-size: 14px;
-	display: none;
+	display: non;
 }
 
 .recipe_block:hover {

@@ -10,10 +10,9 @@ $('section.awSlider .carousel').on('slid.bs.carousel', function () {
 	$('section.awSlider > img').attr('src',bscn);
 });
 
-// Choosing ingredients
+$(document).ready(function() {
+	$(".recipe_block p").hide();
 
-$(document).ready(function() {	
-  // Добавляем значения
   	var val_data = {
 	    "val1": "Значение 1",
 	    "val2": "Значение 2",
@@ -96,6 +95,10 @@ $(document).ready(function() {
   		$(".3n ul").slideToggle("medium", function() {
   			$(".3n ul").hide();
   		});
+  	});
+
+  	$(".recipe_block").hover( function() {
+    	$(".recipe_block p").slideToggle('medium');
   	});
 
 
