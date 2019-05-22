@@ -7,7 +7,15 @@ class Add_recipe(models.Model):
     description = models.TextField(help_text='Описание рецепта')
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     date = models.DateTimeField(auto_now_add=True, auto_now=False)
-    image = models.ImageField(upload_to='articles/', width_field=100,height_field=100)
+    image = models.ImageField(upload_to='articles/')
+    DIFFICULTY = (
+        ('Очень легко','Очень легко'),
+        ('Легко', 'Легко'),
+        ('Нормально','Нормально'),
+        ('Сложно','Сложно'),
+        ('Очень сложно','Очень сложно'),
+        )
+    diff = models.CharField(max_length=100, choices=DIFFICULTY, null = True)
     def __unicode__(self):
         return self.title
 
