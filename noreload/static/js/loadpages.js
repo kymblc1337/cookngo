@@ -4,7 +4,7 @@ $('nav a').on('click',null,null,function(e){
 
     $('nav a.current').removeClass('current');
     $(this).addClass('current');
-    $('#container').remove();
+    $('#container-1').remove();
 
     $('#content').load(url+' #content').hide().fadeIn('slow');
 });
