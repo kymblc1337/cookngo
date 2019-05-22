@@ -525,6 +525,7 @@ input[type="text"] {
 }
 
 .recipes_hidden{
+	letter-spacing: 1px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -553,6 +554,13 @@ input[type="text"] {
 
 
 .info_name {
+	line-height: 20px;
 	font-size: 12px;
 	border-bottom: 1px solid white;
+}
+
+.info_value {
+	font-size: 10px;
+	font-family: AvantGardeCTT;
+	display: inline-block;
 }
