@@ -98,7 +98,7 @@ $(document).ready(function() {
   	});
 
   	$(".recipe_block").hover( function() {
-    	$(".recipe_block p").slideToggle('medium');
+    	$(this "p").slideToggle('medium');
   	});
 
 
