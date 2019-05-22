@@ -16,6 +16,8 @@ class Add_recipe(models.Model):
         ('Очень сложно','Очень сложно'),
         )
     diff = models.CharField(max_length=100, choices=DIFFICULTY, null = True)
+    likes = models.IntegerField(default='0')
+    dislikes = models.IntegerField(default='0')
     def __unicode__(self):
         return self.title
 
