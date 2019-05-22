@@ -57,7 +57,7 @@ def is_valid_queryparam(param):
 
 class Index(ListView):
     template_name = "recipes\index.html"
-    paginate_by = 2
+    paginate_by = 3
 
     def get(self, request, *args, **kwargs):
         ds = request.GET.get('title_contains')

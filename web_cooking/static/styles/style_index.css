@@ -516,9 +516,8 @@ input[type="text"] {
 .recipe_block {
 	text-align: center;
 	border: 2px solid green;
-	width: 302px;
+	width: 350px;
 	padding: 7px;
-	margin-right: 2px;
 }
 .recipe_block img{
 	width: 290px;
@@ -527,6 +526,7 @@ input[type="text"] {
 
 .recipes_hidden{
 	display: flex;
+	justify-content: space-between;
 }
 
 .recipe_block h2{
@@ -537,7 +537,22 @@ input[type="text"] {
 .recipe_block p {
 	font-family: 'avantgardectt';
 	text-align: left;
-	font-weight: bold;
+	letter-spacing: 2px;
 	font-size: 14px;
-	display: noe;
+	display: none;
+}
+
+.recipe_info {
+	border: 2px solid white;
+	margin: 10px 5px;
+	height: 65px;
+	display: flex;
+	justify-content: space-around;
+}
+
+
+
+.info_name {
+	font-size: 12px;
+	border-bottom: 1px solid white;
 }
