@@ -3,6 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Cook'n'go</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/distractful.css">
     <link rel="stylesheet" href="styles/style_title.css">
     <link rel="shortcut icon" href="img/logo-black.jpg">
@@ -15,33 +17,16 @@
     <div class="main-menu">
         <ul >
             <li><a href="#">Рецепты</a>
-                <ul class="sub-menu">
-                    <li><a href="#1">Мясо</a></li>
-                    <li><a href="#2">Рыба</a></li>
-                    <li><a href="#3">Десерты</a></li>
-                    <li><a href="#3">Еще</a></li>
-                </ul>
+
             </li>
             <li><a href="#">В мире кулинарии</a>
-                <ul class="sub-menu second">
-                    <li><a href="#1">Уроки</a></li>
-                    <li><a href="#2">Кулинарные шоу</a></li>
-                    <li><a href="#3">Еще</a></li>
-                </ul>
+                
             </li>
             <li><a href="#">Мастер-классы</a>
-                <ul class="sub-menu third">
-                    <li><a href="#1">Видео</a></li>
-                    <li><a href="#2">Курсы</a></li>
-                    <li><a href="#3">Еще</a></li>
-                </ul>
+             
             </li> 
             <li><a href="#">О еде</a>
-                <ul class="sub-menu fourth">
-                    <li><a href="#1">Здоровье</a></li>
-                    <li><a href="#2">Диеты</a></li>
-                    <li><a href="#3">Еще</a></li>
-                </ul>
+                
             </li>
         </ul>
     </div>
@@ -88,7 +73,7 @@
 <script>
     var dist = $('section.distractful').distractful({
         parallax: true,         // true || false
-        parallaxScroll:215,    // How far the div will move. Default, no movement. lower num = faster
+        parallaxScroll: 215,    // How far the div will move. Default, no movement. lower num = faster
         controls: true,         // moving || true || false. use false to hide
         scrollSpeed: 1000,      // int. Default: 1000 (1 second)
         easing: 'easeInOutExpo',// false || 'easingFunctionName. Use an easing function. Requires Easing library. Set to 'false' to disable, will use jQuery animate

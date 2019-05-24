@@ -12,65 +12,47 @@ pre{
 	color:white;
 }
 .quot{
-	margin:400px 500px 20px 20px;
+	margin:700px 500px 20px 20px;
+
+
 }
 .logo{
 	left:70px;
-	top:20px;
-	width:200%;
+	top:50px;
+	width:100%;
 	position: absolute;
 	z-index: 10;
 }
 .main-menu{
 	left:40px;
-	top: 150px;
+	top: 250px;
 	position:absolute;
 	z-index: 10;
 	
 
 }
-.sub-menu{
-	left:290px;
-	top:16px;
-	position:absolute;
-	z-index: 10;
-	display: none;
-	width:150px;
-}
-.second{
-	top:64px;
-}
-.third{
-	top:112px;
-}
-.fourth{
-	top:160px;
-}
-li:hover .sub-menu{
-	display: block;
-	background: rgba(86,86,86,0.85);
-	border:2px solid #A9A9A9;
-	border-radius: 0 30px 30px 30px;
-}
+
+
 
 a{
-	font-size: 25px;
+	font-size: 30px;
 	color:white;
 	font-family:Devroye;
 	text-decoration:none;
 }
 li{
-	width:220px;
-	padding:5px 15px;
+	width:230px;
+	padding:15px 15px;
 	list-style: none;
 }     
 .main-menu>ul>li:hover{
-	background-color: #e5e5e5;
+	background-color: white;
 
 }
 li:hover a{
 	font-weight: bold;
 	color:black;
+	text-decoration: none;
 }
 
 .main-menu>ul>li:hover>a:after{
@@ -78,19 +60,6 @@ li:hover a{
 	margin-left: 20px;
 }
 
-li:hover .sub-menu a{
-	color:white;
-}
-
-li:hover .sub-menu li{
-	width:150px;
-	margin-left:-30px;
-}
-
-li:hover .sub-menu a:hover{
-	font-family:Devroye;
-	font-style:italic;
-}
 .auetinf{
 	position: absolute;
 	z-index: 10;
@@ -100,11 +69,15 @@ li:hover .sub-menu a:hover{
 }
 .auetinf a{color:white;font-family:Devroye;padding:15px;}
 button:hover{
-	background-color:#00a86b;
+	background-color:white;
+}
+button:hover a{
+	color:black;
+	font-weight: bold;
+	text-decoration: none;
 }
 button{
-	background: rgba(86,86,86,0.85);
-	border-radius: 50px;
-	border:2px solid #A9A9A9;
+	background: rgba(123,123,123,0);
+	border:3px solid white;
 }
 
