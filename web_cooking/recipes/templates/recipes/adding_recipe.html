@@ -1,29 +1,25 @@
+{% extends 'posts.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Posts</title>
-</head>
-<body>
+    <title>Title</title>
 
-<a href='{% url "add" %}'>Добавить рецепт</a>
-
-{% for obj in post_list %}
-<a href='{% url "detail" id=obj.id %}'>{{ obj.title }}</a><br>
-
-{% endfor %}
-
-
+    (% block content %}
 <div class='container'>
     <div class='row'
          <div class='col-sm6 col-sm-offset-4'>
              <form action='' method="POST">
                  {% csrf_token %}
+                 {{ form|crispy }}
                  <input type='submit' value='Добавить рецепт'>
              </form>
          </div>
     </div>
 </div>
+{% endblock content %}
+</head>
+<body>
 
 </body>
 </html>
