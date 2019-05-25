@@ -7,6 +7,8 @@ from django.template.context_processors import csrf
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from .models import Category, Recipe, Kitchen, Menu
+from django.views import View
+from .forms import Add_recipe_form
 
 def post_detail(request, id = None):
     obj = get_object_or_404(Recipe, id = id)
@@ -76,3 +78,14 @@ class Index(ListView):
 
     def get_queryset(self):
         return self.recipe_search
+
+
+class Add_view(View):
+    template_name = 'recipes/add.html'
+
+    def get(self, request, *args, **kwargs):
+        form = Add_recipe_form(request.POST or None)
+        context = {
+            'form': form
+        }
+        return render(self.request, self.template_name, context)

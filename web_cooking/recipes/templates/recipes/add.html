@@ -1,0 +1,25 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<div class='container'>
+    <div class='row'
+         <div class='col-sm6 col-sm-offset-4'>
+             <form action='' method="POST">
+                 {% csrf_token %}
+                 {{ form|crispy }}
+                 <input type='submit' value='Добавить рецепт'>
+             </form>
+         </div>
+    </div>
+</div>
+
+
+</head>
+<body>
+
+</body>
+</html>
