@@ -9,6 +9,7 @@ from django.views.generic.list import ListView
 from .models import Category, Recipe, Kitchen, Menu
 from django.views import View
 from .forms import Add_recipe_form
+from django.http import HttpResponseRedirect
 
 def post_detail(request, id = None):
     obj = get_object_or_404(Recipe, id = id)
@@ -84,8 +85,35 @@ class Add_view(View):
     template_name = 'recipes/add.html'
 
     def get(self, request, *args, **kwargs):
-        form = Add_recipe_form(request.POST or None)
+        form = Add_recipe_form()
         context = {
             'form': form
         }
         return render(self.request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = Add_recipe_form(request.POST or  None, request.FILES or None)
+        if form.is_valid():
+            new_post = form.save(commit = False)
+            title = form.cleaned_data['title']
+            description = form.cleaned_data['description']
+            image = form.cleaned_data['image']
+            if 'image' in
+            form.image = request.FILES['']
+            diff = form.cleaned_data['diff']
+            kitchen = form.cleaned_data['kitchen']
+            category = form.cleaned_data['category']
+            new_post.save()
+            Recipe.objects.create(title=new_post.title,
+                                  description=new_post.description,
+                                  image=new_post.image,
+                                  diff=new_post.diff,
+                                  kitchen=new_post.kitchen,
+                                  category=new_post.category,
+                                  )
+            return HttpResponseRedirect('/')
+        context = {
+            'form': form
+        }
+        return render(self.request, self.template_name, context)
+

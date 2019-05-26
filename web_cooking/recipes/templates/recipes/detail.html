@@ -7,7 +7,11 @@
 <body>
 <h1>{{ title }}</h1>
 {{ obj.description }}<br>
-<img src="{{ MEDIA_URL }}{{ obj.image.url }}" <br> <br>
+{% if post.image %}}
+    <p><img src="{{ MEDIA_URL }}{{ obj.image.url }}"</p> <br> <br>
+{% else %}
+<p></p>
+{% endif %}
 {{ obj.date }}<br>
 {{ obj.updated }}<br>
 
