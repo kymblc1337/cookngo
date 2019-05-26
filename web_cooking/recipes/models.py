@@ -18,7 +18,7 @@ class Menu(models.Model):
 
 class Recipe(models.Model):
     title = models.CharField(max_length = 255,help_text ='Название рецепта:')
-    description = models.TextField(max_length = 255, help_text= 'Описание рецепта')
+    description = models.TextField(help_text= 'Описание рецепта')
     date = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(blank = True, upload_to='recipes_img/')
     category = models.ForeignKey(Category, null = True, blank= True,
@@ -29,9 +29,9 @@ class Recipe(models.Model):
                              on_delete = models.SET_NULL)
 
     DIFFICULTY = (
-        ('1', '1'),
-        ('2', '2'),
-        ('3', '3'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
     )
     diff = models.IntegerField(choices=DIFFICULTY, null=True)
 
