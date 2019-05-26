@@ -94,26 +94,11 @@ class Add_view(View):
     def post(self, request, *args, **kwargs):
         form = Add_recipe_form(request.POST or  None, request.FILES or None)
         if form.is_valid():
-            new_post = form.save(commit = False)
-            title = form.cleaned_data['title']
-            description = form.cleaned_data['description']
-            image = form.cleaned_data['image']
-            if 'image' in
-            form.image = request.FILES['']
-            diff = form.cleaned_data['diff']
-            kitchen = form.cleaned_data['kitchen']
-            category = form.cleaned_data['category']
-            new_post.save()
-            Recipe.objects.create(title=new_post.title,
-                                  description=new_post.description,
-                                  image=new_post.image,
-                                  diff=new_post.diff,
-                                  kitchen=new_post.kitchen,
-                                  category=new_post.category,
-                                  )
-            return HttpResponseRedirect('/')
+            instance = form.save(commit = False)
+            instance.save()
+            return HttpResponseRedirect(instance.get_absolute_url())
         context = {
             'form': form
         }
-        return render(self.request, self.template_name, context)
+        return render(self.request, 'recipes/detail', context)
 
