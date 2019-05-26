@@ -11,6 +11,7 @@ $('section.awSlider .carousel').on('slid.bs.carousel', function () {
 });
 
 $(document).ready(function() {
+	$(".description").hide();
 
   	var val_data = {
 	    "val1": "Значение 1",
@@ -97,7 +98,8 @@ $(document).ready(function() {
   	});
 
   	$(".recipe_block").hover( function() {
-    	$().slideToggle('medium');
+  		$(".recipe_block p").addClass("active1");
+    	$(".active1").slideToggle('medium');
   	});
 
 
