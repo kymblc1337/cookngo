@@ -101,4 +101,3 @@ class Add_view(View):
             'form': form
         }
         return render(self.request, 'recipes/detail', context)
-
