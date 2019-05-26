@@ -30,9 +30,3 @@ class Add_recipe_form(forms.ModelForm):
 
         }
 
-        def __init__(self, *args, **kwargs):
-            super(Add_recipe_form, self).__init__(*args, **kwargs)
-            self.fields['title'].label = 'kmllmk'
-            self.fields['description'].label = 'kmllmk'
-            self.fields['image'].label = 'kmllmk'
-            self.fields['diff'].label = 'kmllmk'
