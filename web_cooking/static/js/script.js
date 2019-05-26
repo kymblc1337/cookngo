@@ -102,10 +102,6 @@ $(document).ready(function() {
     	$(".active1").slideToggle('medium');
   	});
 
-
-
-
-
   	$('.dropdown_cousine ul input[type="checkbox"]').on('click', function() {
 
     var title_val = $(this).closest('.dropdown_cousine ul').find('input[type="checkbox"]').val(),
