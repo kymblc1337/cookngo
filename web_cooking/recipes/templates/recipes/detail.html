@@ -7,9 +7,13 @@
 <body>
 <h1>{{ title }}</h1>
 {{ obj.description }}<br>
-<img src="{{ MEDIA_URL }}{{ obj.image.url }}" <br> <br>
+<p><img src="{{ MEDIA_URL }}{{ obj.image.url }}"</p> <br> <br>
+{{ obj.diff}}<br>
+{{ obj.kitchen }}<br>
+{{ obj.menu }}<br>
 {{ obj.date }}<br>
 {{ obj.updated }}<br>
+
 
 </body>
 </html>
