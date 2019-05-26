@@ -31,9 +31,9 @@ def login(request):
             return redirect('/')
         else:
             args['login_errors'] = "Пользователь не найден / неправильный пароль"
-            return render_to_response('login.html', args)
+            return render_to_response('recipes/login.html', args)
     else:
-        return render_to_response('login.html', args)
+        return render_to_response('recipes/login.html', args)
 
 def registration(request):
     args = dict()
