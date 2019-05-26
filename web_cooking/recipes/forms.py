@@ -17,6 +17,7 @@ class Add_recipe_form(forms.ModelForm):
             'diff',
             'kitchen',
             'category',
+            'menu',
         ]
 
         labels = {
@@ -25,8 +26,7 @@ class Add_recipe_form(forms.ModelForm):
             'image': 'Фотография рецепта:',
             'diff': 'Сложность рецепта:',
             'kitchen': 'Кухня:',
-            'category': 'Категория блюда:'
-
-
+            'category': 'Категория блюда:',
+            'menu': 'Меню:'
         }
 
