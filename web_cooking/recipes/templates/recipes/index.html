@@ -121,10 +121,10 @@
             <div class="recipes_hidden">
                 {%  for recipe in object_list %}
                 <div class="recipe_block">
-    {#                {% if recipe.image %}#}
-    {#                    <img src="{{ MEDIA_URL }}{{ recipe.image.url }}">#}
-    {#                {% endif %}#}
-                    <img src="static/recipes_img/crsar.jpg" alt="">
+                    {% if recipe.image %}
+                        <img src="{{ MEDIA_URL }}{{ recipe.image.url }}">
+                    {% endif %}
+<!--                    <img src="static/recipes_img/crsar.jpg" alt="">-->
                     <h2>{{ recipe.title }}</h2>
                     <p>{{ recipe.description }}</p>
                     <div class="recipe_info">
