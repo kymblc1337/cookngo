@@ -8,12 +8,14 @@ src: url('../fonts/devroye/devroye.woff') format('woff');
 pre{
 	font-family: Devroye;
 	font-style: italic;
-	font-size: 30px;
+	font-size: 40px;
 	color:white;
+	background: transparent;
+	border:none;
 }
 .quot{
-	margin:700px 500px 20px 20px;
-
+	margin:680px 500px 20px 20px;
+	
 
 }
 .logo{

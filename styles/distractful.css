@@ -32,9 +32,8 @@ body.distractful-body{overflow-x:hidden }
 .distractful-controls.right:hover {
   box-shadow: 10px -10px 0 rgba(255, 255, 255, 0.2);
 }
-.text-center{
-	background-color: red;
-}
+
+
 .distractful-controls.right {
 	right:50px;
 	width: 70px;
