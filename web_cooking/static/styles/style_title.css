@@ -1,0 +1,112 @@
+@font-face{
+
+font-family: Devroye;
+src: url('../fonts/devroye/devroye.woff') format('woff');
+
+}
+
+pre{
+	font-family: Devroye;
+	font-style: italic;
+	font-size: 40px;
+	color:white;
+	background: transparent;
+	border:none;
+}
+.quot{
+	margin:680px 500px 20px 20px;
+
+
+}
+.logo{
+	left:70px;
+	top:50px;
+	width:100%;
+	position: absolute;
+	z-index: 10;
+}
+.main-menu{
+	left:40px;
+	top: 250px;
+	position:absolute;
+	z-index: 10;
+
+
+}
+
+input[type=submit]{
+    font-family: 'Devroye';
+}
+
+a{
+	font-size: 30px;
+	color:white;
+	font-family:Devroye;
+	text-decoration:none;
+}
+li{
+	width:230px;
+	padding:15px 15px;
+	list-style: none;
+}
+.main-menu>ul>li:hover{
+	background-color: white;
+
+}
+li:hover a{
+	font-weight: bold;
+	color:black;
+	text-decoration: none;
+}
+
+.main-menu>ul>li:hover>a:after{
+	content:"▶";
+	margin-left: 20px;
+}
+
+.auetinf{
+	position: absolute;
+	z-index: 10;
+	top:50px;
+	right:50px;
+
+}
+.auetinf a{color:white;font-family:Devroye;padding:15px;}
+button:hover{
+	background-color:white;
+}
+button:hover a{
+	color:black;
+	font-weight: bold;
+	text-decoration: none;
+}
+button{
+	background: rgba(0,0,0,0.5);
+	border:3px solid white;
+}
+.login{
+	background:transparent;
+	top:130px;
+	right:50px;
+	position:absolute;
+	z-index: 10;
+	border:3px solid white;
+	padding:40px;
+	background: rgba(0,0,0,0.5);
+	display: none;
+
+	}
+.register{
+	top:242px;
+	right:93px;
+	position: absolute;
+	z-index: 10;
+	background: transparent;
+	display: none;
+
+}
+
+label{color: white;font-size: 21px;}
+input{
+	margin-bottom: 5px;
+}
