@@ -1,6 +1,4 @@
-﻿/* SLIDER MAIN PAGE */
-
-$('section.awSlider .carousel').carousel({
+﻿$('section.awSlider .carousel').carousel({
 	pause: "hover",
   interval: 4000
 });
@@ -28,29 +26,6 @@ $(document).ready(function() {
 	  	['[name="choose_dish"]', ["<a href='javascript:void(0);'><span class='open'>Блюдо</span><span class='value'></span></a>"],{"first": "1", "second": "2", "third": "3"}]
 	];
 
-	for (var i = 0; i < ingredients_menu.length; i++) {
-		var input = $(ingredients_menu[i][0]);
-  
-	  	var val_cont = document.createElement('div');
-	  	$(val_cont).addClass("dropdown_cousine");
-	  	$(val_cont).addClass(i + "s");
-
-	  	$(val_cont).append(ingredients_menu[i][1]);
-
-	  	var ul = document.createElement('ul');
-	  	$(ul).addClass("choose_cousine_menu");
-	  	for (elem in ingredients_menu[i][2]) {
-	    	$(ul).append("<li><input type='checkbox' value='" + elem + "' id='" + elem + "'><label for='" + elem + "'>" + val_data[elem] + "</label></li>");
-	  	}
-	  	$(ul).appendTo(val_cont);
-
-	  	$(input).after(val_cont);
-	  	$(ul).hide();
-	}
-
-	var ingredients_dropdown = document.createElement('div');
-	$(ingredients_dropdown).addClass("dropdown_cousine"); 
-	$(ingredients_dropdown).addClass("dropdown_ingredients");
 
   	$(".1s a").on('click', function() {
     	$(".1s ul").slideToggle('medium');
@@ -102,27 +77,6 @@ $(document).ready(function() {
     	$(".active1").slideToggle('medium');
   	});
 
-  	$('.dropdown_cousine ul input[type="checkbox"]').on('click', function() {
-
-    var title_val = $(this).closest('.dropdown_cousine ul').find('input[type="checkbox"]').val(),
-      title = $(this).val() + ", ";
-
-    if ($(this).is(':checked')) {
-      var html = '<span data-atr="' + title + '">' + title + '</span>';
-      $('.value').append(html);
-      $(".open").hide();
-    } else {
-      $('span[data-atr="' + title + '"]').remove();
-    }
-    
-    if ($('.value').text() == "") {
-      $(".open").show();
-      $(input).val("");
-    } else {
-      $(input).val($('.value').text());
-    }
-
-  });
 
 });
 

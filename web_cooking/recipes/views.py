@@ -74,7 +74,7 @@ class Index(ListView):
     def get_context_data(self,  **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
         context["cats"] = Category.objects.order_by("title")
-        context["category"] = Category.objects.first()
+        context["category"] = Category.objects.all()
         return context
 
     def get_queryset(self):

@@ -6,11 +6,41 @@
     <title>Title</title>
 
 <div class='container'>
-    <div class='row'
+    <div class='row'>
          <div class='col-sm6 col-sm-offset-4'>
-             <form action='' method="POST" enctype="multipart/form-data">
+             <form action='' method="POST">
                  {% csrf_token %}
-                 {{ form|crispy }}
+
+                 <div class="fieldWrapper">
+                        {{ form.title.errors }}
+                        <label for="{{ form.title.id_for_label }}">Название рецепта:</label>
+                        {{ form.title }}
+                 </div>
+                 <div class="fieldWrapper">
+                        {{ form.description.errors }}
+                        <label for="{{ form.description.id_for_label }}">Название рецепта:</label>
+                        {{ form.description }}
+                 </div>
+                 <div class="fieldWrapper">
+                        {{ form.image.errors }}
+                        <label for="{{ form.image.id_for_label }}">Фото:</label>
+                        {{ form.image }}
+                 </div>
+                 <div class="fieldWrapper">
+                        {{ form.diff.errors }}
+                        <label for="{{ form.diff.id_for_label }}">Название рецепта:</label>
+                        {{ form.diff }}
+                 </div>
+                 <div class="fieldWrapper">
+                        {{ form.kitchen.errors }}
+                        <label for="{{ form.kitchen.id_for_label }}">Название рецепта:</label>
+                        {{ form.kitchen }}
+                 </div>
+                 <div class="fieldWrapper">
+                        {{ form.category.errors }}
+                        <label for="{{ form.category.id_for_label }}">Название рецепта:</label>
+                        {{ form.category }}
+                 </div>
                  <input type='submit' value='Добавить рецепт'>
              </form>
          </div>

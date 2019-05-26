@@ -97,18 +97,18 @@ img[src="img/pointer_black.png"] {
   	margin-left:10px;
 }
 
-.nav a{							
+.nav a{
 	padding:13px;
-	text-decoration: none; 
+	text-decoration: none;
 	color: white;
 	display: block;
 }
 .nav li ul{
 	display: none;
-	height: auto;									
+	height: auto;
 	margin-left: -11px;
-	padding: 0;		
-}			
+	padding: 0;
+}
 
 .nav li:hover ul{
 }
@@ -118,7 +118,7 @@ img[src="img/pointer_black.png"] {
 
 .navbar li ul li {
 	background-color: white;
-} 
+}
 
 .menu ul li {
 	border-bottom: 2px solid black;
@@ -131,7 +131,7 @@ img[src="img/pointer_black.png"] {
 	transition: background 0.5s ease;
 	background: white;
   	color: black;
-} 
+}
 
 .auth {
 	margin-top: 50px;
@@ -157,8 +157,8 @@ img[src="img/pointer_black.png"] {
    	background-color: #39b54a;
 }
 
-button, 
-button:active, 
+button,
+button:active,
 button:focus {
     outline: none;
 }
