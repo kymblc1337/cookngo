@@ -51,7 +51,10 @@
             <label for="{{ form.cal.id_for_label }}">Калорийность:</label>
             {{ form.cal  | add_class:"input_add"}}
         </div>
-        <input type='submit' value='Добавить рецепт'>
+        <div class="fieldWrapper">
+            <input type='submit' value='Добавить рецепт' class="submit">
+        </div>
+
     </form>
 </main>        
 {% endblock %}
