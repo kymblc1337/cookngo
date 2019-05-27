@@ -430,7 +430,7 @@ input[type="text"] {
   border: none;
   padding-bottom: 0px;
 }
-.dropdown_cousine input[type="checkbox"] {
+.dropdown_cousine input[type="radio"] {
   display: none;
 }
 .dropdown_cousine label {
@@ -448,7 +448,7 @@ input[type="text"] {
   height: 15px;
   border: 2px solid black;
 }
-.dropdown_cousine input[type="checkbox"]:checked ~ label:before {
+.dropdown_cousine input[type="radio"]:checked ~ label:before {
 }
 .dropdown_cousine label:after {
   content: '';
@@ -467,7 +467,7 @@ input[type="text"] {
   opacity: 0;
   visibility: hidden;
 }
-.dropdown_cousine input[type="checkbox"]:checked ~ label:after {
+.dropdown_cousine input[type="radio"]:checked ~ label:after {
   opacity: 1;
   visibility: visible;
 }
