@@ -141,6 +141,7 @@ class Add_view(View):
         return render(self.request, 'recipes/detail', context)
 
 def post_update(request, id=None):
+    current_user_id = request.user.id
     instance = get_object_or_404(Recipe, id=id)
     form = Add_recipe_form(request.POST or None, request.FILES or None,instance=instance)
     if form.is_valid():
