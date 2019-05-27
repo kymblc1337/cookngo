@@ -9,7 +9,24 @@ from django.views.generic.list import ListView
 from .models import Category, Recipe, Kitchen, Menu
 from django.views import View
 from .forms import Add_recipe_form
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+
+
+def userpage(request):
+    #current_user = get_object_or_404(User)
+    #print("**********************************************************************")
+    #print(request.user.is_authenticated)
+    #print("**********************************************************************")
+    if request.user.is_authenticated:
+        user = request.user
+        a = Recipe.objects.all().filter(user_id=user.id)
+        b = str(a)[11:-2].replace('<Recipe', '').replace('>', '')
+        b = b.replace(":", "")
+        data = {"id": user.id, "name": user.username, "last_seen": user.last_login, "recipes_list": b}
+        return render(request, "recipes/userpage.html", data)
+    else:
+        return redirect('/')
 
 def post_detail(request, id = None):
     obj = get_object_or_404(Recipe, id = id)
@@ -31,9 +48,9 @@ def login(request):
             return redirect('/')
         else:
             args['login_errors'] = "Пользователь не найден / неправильный пароль"
-            return render_to_response('login.html', args)
+            return render_to_response('recipes/login.html', args)
     else:
-        return render_to_response('login.html', args)
+        return render_to_response('recipes/login.html', args)
 
 def registration(request):
     args = dict()
@@ -48,12 +65,12 @@ def registration(request):
             return redirect('/')
         else:
             args['form'] = new_userform
-    return render_to_response('registration.html', args)
+    return render_to_response('recipes/registration.html', args)
 
 
 def logout(request):
     auth.logout(request)
-    return render(request, "logout.html")
+    return redirect('/')
 
 def is_valid_queryparam(param):
     return param != '' and param is not None

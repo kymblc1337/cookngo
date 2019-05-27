@@ -1,7 +1,7 @@
 from . import  views
 from django.contrib import admin
 from django.urls import path
-from .views import login,logout,registration,Add_view
+from .views import login,logout,registration,Add_view, userpage
 
 admin.autodiscover()
 
