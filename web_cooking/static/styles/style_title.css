@@ -19,14 +19,14 @@ pre{
 
 }
 .logo{
-	left:70px;
+	left:145px;
 	top:50px;
 	width:100%;
 	position: absolute;
 	z-index: 10;
 }
 .main-menu{
-	left:40px;
+	left:100px;
 	top: 250px;
 	position:absolute;
 	z-index: 10;
@@ -45,7 +45,10 @@ a{
 	text-decoration:none;
 }
 li{
-	width:230px;
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	width:250px;
 	padding:15px 15px;
 	list-style: none;
 }
@@ -59,11 +62,9 @@ li:hover a{
 	text-decoration: none;
 }
 
-.main-menu>ul>li:hover>a:after{
-	content:"▶";
-	margin-left: 20px;
+li:hover {
+	cursor: pointer;
 }
-
 .auetinf{
 	position: absolute;
 	z-index: 10;
@@ -77,11 +78,13 @@ button:hover{
 }
 button:hover a{
 	color:black;
-	font-weight: bold;
 	text-decoration: none;
 }
 button{
-	background: rgba(0,0,0,0.5);
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	background: transparent;
 	border:3px solid white;
 }
 .login{
