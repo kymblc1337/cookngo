@@ -18,6 +18,8 @@ class Add_recipe_form(forms.ModelForm):
             'kitchen',
             'category',
             'menu',
+            'time',
+            'cal',
         ]
 
         labels = {
@@ -27,6 +29,10 @@ class Add_recipe_form(forms.ModelForm):
             'diff': 'Сложность рецепта:',
             'kitchen': 'Кухня:',
             'category': 'Категория блюда:',
-            'menu': 'Меню:'
+            'menu': 'Меню:',
+            'time': 'Время приготовления',
+            'cal': 'Калорийность',
         }
+
+
 
