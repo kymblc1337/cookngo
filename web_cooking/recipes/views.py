@@ -103,19 +103,22 @@ class Add_view(View):
 
 from el_pagination.views import AjaxListView
 
-class EntryListView(AjaxListView):
-    context_object_name = "object_list"
-    template_name = "recipes/object_list.html"
-    page_template = 'recipes/index.html'
-
-    def get_queryset(self):
-        return Recipe.objects.all()
+def entry_list(request,
+    template='recipes/object_list.html',
+    page_template='recipes/index.html'):
+    context = {
+        'entry_list': Recipe.objects.all(),
+        'page_template': page_template,
+    }
+    if request.is_ajax():
+        template = page_template
+    return render(request, template, context)
 
 from el_pagination.decorators import page_template
 
 @page_template('recipes/index.html')  # just add this decorator
-def entry_list(request,
-        template='recipes/object_list.html', extra_context=None):
+
+def entry_list(request, template='recipes/object_list.html', extra_context=None):
     context = {
         'object_list': Recipe.objects.all(),
     }
