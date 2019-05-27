@@ -104,7 +104,7 @@ class Add_view(View):
 
 def post_update(request, id=None):
     instance = get_object_or_404(Recipe, id=id)
-    form = Add_recipe_form(request.POST or None, instance=instance)
+    form = Add_recipe_form(request.POST or None, request.FILES or None,instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
@@ -115,5 +115,11 @@ def post_update(request, id=None):
         'form': form,
     }
     return render(request, 'recipes/add.html', context)
+
+def post_delete(request, id=None):
+    instance = get_object_or_404(Recipe, id=id)
+    instance.delete()
+    return redirect('/')
+
 
 
