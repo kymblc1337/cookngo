@@ -15,7 +15,7 @@
 {{ obj.time }}<br>
 {{ obj.cal }}<br>
 {{ obj.date }}<br>
-{{ obj.user }}<br>
+<a href ='/userpage/{{ obj.user_id }}'>{{ obj.user }}</a><br>
 {{ obj.updated }}<br>
 
 {% if request.user == obj.user %}
