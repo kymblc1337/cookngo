@@ -34,6 +34,8 @@ def userpage(request, pageid =  None):
 
 def post_detail(request, id = None):
     obj = get_object_or_404(Recipe, id=id)
+    obj.views+=1
+    obj.save(update_fields=['views'])
     context = {
         "title": obj.title,
         "obj": obj
