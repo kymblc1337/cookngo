@@ -4,7 +4,7 @@
 <form method="get" action="">
     <div class="ingredients_choice">
         <input name="choose_cousine" value="name" type="text">
-        <div class="dropdown_cousine 0s">
+        <div class="dropdown_cousine s0">
             <a href="javascript:void(0);" class="white-bg">
                 <span class="open">Кухня</span>
             </a>
@@ -17,9 +17,10 @@
 
         </div>
         <input name="choose_menu" value="2" type="text">
-        <div class="dropdown_cousine 1s">
+        <div class="dropdown_cousine s1">
             <a href="javascript:void(0);">
-                <span class="open">Меню</span></a>
+                <span class="open">Меню</span>
+            </a>
             <ul class="choose_cousine_menu" style="display: block;">
                 {% for l in menues %}
                 <li><input name = "menu" type="radio" value={{ l.id }} id={{ l.id }}><label for={{ l.id }}>{{ l.title }}</label></li>
@@ -27,7 +28,7 @@
             </ul>
         </div>
         <input name="choose_category" value="3" type="text">
-        <div class="dropdown_cousine 2s"><a href="javascript:void(0);" class="white-bg">
+        <div class="dropdown_cousine s2"><a href="javascript:void(0);" class="white-bg">
             <span class="open">Категория</span></a>
             <ul class="choose_cousine_menu" style="display: block;">
                 {% for k in category %}
@@ -35,15 +36,7 @@
                {%  endfor %}
             </ul>
         </div>
-        <input name="choose_dish" value="val2, val5" type="text">
-        <div class="dropdown_cousine 3s">
-            <a href="javascript:void(0);" class="white-bg"><span class="open">Блюдо</span></a>
-            <ul class="choose_cousine_menu" style="display: block;">
-                <li><input type="checkbox" value="first" id="first3"><label for="first3">undefined</label></li>
-                <li><input type="checkbox" value="second" id="second3"><label for="second3">undefined</label></li>
-                <li><input type="checkbox" value="third" id="third3"><label for="third3">undefined</label></li>
-            </ul>
-        </div>
+
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
 </form>

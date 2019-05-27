@@ -9,23 +9,18 @@ $('section.awSlider .carousel').on('slid.bs.carousel', function () {
 });
 
 
-$(".1s a").on('click', function () {
-	$(".1s ul").slideToggle('medium');
+$(".s1 a").on('click', function () {
+	$(".s1 ul").slideToggle('medium');
 });
 
-$(".0s a").on('click', function () {
-	$(".0s ul").slideToggle('medium');
-	$(".0s a").toggleClass("white-bg");
+$(".s0 a").on('click', function () {
+	$(".s0 ul").slideToggle('medium');
+	$(".s0 a").toggleClass("white-bg");
 });
 
-$(".2s a").on('click', function () {
-	$(".2s ul").slideToggle('medium');
-	$(".2s a").toggleClass("white-bg");
-});
-
-$(".3s a").on('click', function () {
-	$(".3s ul").slideToggle('medium');
-	$(".3s a").toggleClass("white-bg");
+$(".s2 a").on('click', function () {
+	$(".s2 ul").slideToggle('medium');
+	$(".s2 a").toggleClass("white-bg");
 });
 
 $(".2n ul").hide();
@@ -53,11 +48,11 @@ $(".3n").hover(function () {
 		$(".3n ul").hide();
 	});
 });
-
-$(".recipe_block").hover(function () {
-	$(".recipe_block p").addClass("active1");
-	$(".active1").slideToggle('medium');
-});
+//
+// $(".recipe_block").hover(function () {
+// 	$(".recipe_block p").addClass("active1");
+// 	$(".active1").slideToggle('medium');
+// });
 
 document.addEventListener("DOMContentLoaded", function() {
 	//The first argument are the elements to which the plugin shall be initialized
