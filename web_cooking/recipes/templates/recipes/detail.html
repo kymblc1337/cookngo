@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="static/styles/style_detail.css"></li>
 </head>
 <body>
-<h1>{{ title }}</h1>
-{{ obj.description }}<br>
-
-
-<p><img src="{{ MEDIA_URL }}{{ obj.image.url }}"</p> <br> <br>
-
-{{ obj.diff}}<br>
-{{ obj.kitchen }}<br>
-{{ obj.category }}<br>
-{{ obj.menu }}<br>
-{{ obj.time }}<br>
-{{ obj.cal }}<br>
-{{ obj.date }}<br>
-{{ obj.user }}<br>
-{{ obj.updated }}<br>
-
-
+<h1 style="margin-left: 800px;margin-top: 100px;"><!--{{ title }}!-->Борщ</h1>
+<!--{{ obj.description }}!--><p class="descrip">У каждой хозяйки, конечно, есть свой рецепт приготовления борща. Мне хотелось бы поделиться с вами одним из своих рецептов. Может быть вам понравится и вы им воспользуетесь. Насыщенный цвет и вкус. К этому борщику ещe чeрный хлебушек, чесночок и ложечку сметаны. М-м-м... вкусно.</p><br>
+<div class="main"><img  src="static/img/borsh.jpg"><!--<img src="{{ MEDIA_URL }}{{ obj.image.url }}"!--> <br>
+<div class="inf">
+<!--{{ obj.diff}}!--><p>Сложность : 3</p>
+<!--{{ obj.kitchen }}!--><p>Кухня : Украинская</p>
+<!--{{ obj.category }}!--><p>Категория : Cупы</p>
+<!--{{ obj.menu }}!--><p>Меню : - </p>
+<!--{{ obj.date }}!--><p>Дата добавления : 26 мая 2019</p>
+<!--{{ obj.updated }}!--><p>Дата обновления : 27 мая 2019</p>
+</div>
+</div>
 
 
 </body>
