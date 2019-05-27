@@ -34,7 +34,7 @@ class Recipe(models.Model):
 
     time = models.IntegerField(null=True, blank=True)
     cal = models.IntegerField(null=True, blank=True)
-
+    views = models.PositiveIntegerField(default = 0)
 
     DIFFICULTY = (
         (1, '1'),
