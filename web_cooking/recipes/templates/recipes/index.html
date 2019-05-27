@@ -83,7 +83,8 @@
                 <button class="date">Дате публикации</button>
             </div>
         </div>
-        <div class="recipes_hidden">
+        <div id="content" class="recipes_hidden">
+        <div id="container">
             {% load el_pagination_tags %}
             {% paginate object_list %}
             {% for recipe in object_list %}
@@ -131,8 +132,10 @@
 {#                <a href="?page={{ page_obj.next_page_number }}">next</a>#}
 {#            {% endif %}#}
         </div>
+        </div>
 
     </div>
     </section>
 </main>
+
 {% endblock %}
