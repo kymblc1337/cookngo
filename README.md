@@ -5,7 +5,7 @@
 
 Презентация 1 - https://docs.google.com/presentation/d/17g1KvzWLwetNSxWqsM67io9jXNPuk58hxXn8yOuYU30/edit?usp=sharing
 
-
+Отчеты по практике - https://drive.google.com/drive/folders/1FQbKZvBqusW9dmSpV66Xu0hDvyUqGNw-?usp=sharing
 
 Веремьева Наталья - Frontend разработчик
 Жгулева Дарья - Frontend разработчик
