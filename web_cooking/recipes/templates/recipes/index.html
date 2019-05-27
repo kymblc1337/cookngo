@@ -30,7 +30,7 @@
         <input name="choose_category" value="3" type="text">
         <div class="dropdown_cousine s2"><a href="javascript:void(0);" class="white-bg">
             <span class="open">Категория</span></a>
-            <ul class="choose_cousine_menu" style="display: block;">
+            <ul class="cat" style="display: block;">
                 {% for k in category %}
                  <li><input name = "cat" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.id }}>{{ k.title }}</label></li>
                {%  endfor %}
