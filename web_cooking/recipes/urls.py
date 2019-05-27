@@ -12,5 +12,5 @@ urlpatterns = [
     path('accounts/logout', logout),
     path('accounts/registration/', registration),
     path('add/', Add_view.as_view()),
-    path('userpage/', userpage),
+    path('userpage/<int:pageid>', userpage),
 ]

@@ -13,17 +13,19 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 
 
-def userpage(request):
+def userpage(request, pageid =  None):
     #current_user = get_object_or_404(User)
-    #print("**********************************************************************")
-    #print(request.user.is_authenticated)
-    #print("**********************************************************************")
+    print("**********************************************************************")
+    print(request.user.is_authenticated)
+    print("**********************************************************************")
     if request.user.is_authenticated:
-        user = request.user
-        a = Recipe.objects.all().filter(user_id=user.id)
+        obj = get_object_or_404(User, id = pageid)
+        a = Recipe.objects.all().filter(user_id=pageid)
         b = str(a)[11:-2].replace('<Recipe', '').replace('>', '')
         b = b.replace(":", "")
-        data = {"id": user.id, "name": user.username, "last_seen": user.last_login, "recipes_list": b}
+        data = {
+            "obj" : obj
+        }
         return render(request, "recipes/userpage.html", data)
     else:
         return redirect('/')
