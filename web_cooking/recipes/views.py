@@ -90,10 +90,18 @@ class Index(ListView):
         menu_id = request.GET.get('menu')
         cous_id = request.GET.get('cousine')
         cat_id = request.GET.get('cat')
+        date_id = request.GET.get('Data_button')
+        popular_id = request.GET.get('Popular_button')
         if is_valid_queryparam(search_filter):
             self.recipe_search =  Recipe.objects.filter(title__contains=search_filter)
         else:
             self.recipe_search = Recipe.objects.all()
+
+        if is_valid_queryparam(date_id):
+            self.recipe_search = Recipe.objects.order_by('-date')
+        elif is_valid_queryparam(popular_id):
+            self.recipe_search = Recipe.objects.order_by('-views')
+
         if is_valid_queryparam(menu_id):
             menu_filter = Menu.objects.get(pk = menu_id)
             self.recipe_search = self.recipe_search.filter(menu = menu_filter)
@@ -103,7 +111,6 @@ class Index(ListView):
         if is_valid_queryparam(cat_id):
             cat_filter = Category.objects.get(pk = cat_id)
             self.recipe_search = self.recipe_search.filter(category = cat_filter)
-
 
         return super(Index, self).get(request, *args, **kwargs)
 
