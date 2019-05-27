@@ -1,0 +1,34 @@
+@font-face {
+    font-family: 'IntroInline';
+    src: url('..static/fonts/IntroInline/Intro.otf') format('opentype');
+}
+body{
+	background: url('..static/img/background2.jpg');
+	color: white;
+	font-size: 30px;
+	font-weight: 300px;
+}
+.descrip{
+	font-family: "IntroInline";
+	width:1300px;
+	margin-left: 280px;
+	border-bottom: none;
+}
+img{
+	width:600px;
+	height:400px;
+	margin-left: 60px;
+	border: 3px solid white;
+
+}
+div{
+	width: 600px;
+}
+p{width: 400px;margin-left: 30px;margin-top:0px;border-bottom:3px solid white;padding-bottom: 5px; }
+.main{display: flex;margin-bottom: 70px;margin-top: 20px;border: 3px solid white;padding: 80px 10px;width: 1250px;
+	margin-left:280px;background-color: rgba(0,0,0,0.5);}
+.inf{
+	/*border: 3px solid white;*/
+	width: 470px;
+	margin-left: 50px;
+}
