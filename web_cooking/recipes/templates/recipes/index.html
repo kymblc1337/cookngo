@@ -4,7 +4,7 @@
 <form method="get" action="">
     <div class="ingredients_choice">
         <input name="choose_cousine" value="name" type="text">
-        <div class="dropdown_cousine 0s">
+        <div class="dropdown_cousine s0">
             <a href="javascript:void(0);" class="white-bg">
                 <span class="open">Кухня</span>
             </a>
@@ -17,24 +17,26 @@
 
         </div>
         <input name="choose_menu" value="2" type="text">
-        <div class="dropdown_cousine 1s">
+        <div class="dropdown_cousine s1">
             <a href="javascript:void(0);">
-                <span class="open">Меню</span></a>
+                <span class="open">Меню</span>
+            </a>
             <ul class="choose_cousine_menu" style="display: block;">
-                {% for k in menues %}
-                <li><input name = "menu" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.title }}>{{ k.title }}</label></li>
+                {% for l in menues %}
+                <li><input name = "menu" type="radio" value={{ l.id }} id={{ l.id }}><label for={{ l.id }}>{{ l.title }}</label></li>
                 {% endfor %}
             </ul>
         </div>
         <input name="choose_category" value="3" type="text">
-        <div class="dropdown_cousine 2s"><a href="javascript:void(0);" class="white-bg">
+        <div class="dropdown_cousine s2"><a href="javascript:void(0);" class="white-bg">
             <span class="open">Категория</span></a>
-            <ul class="choose_cousine_menu" style="display: block;">
+            <ul class="cat" style="display: block;">
                 {% for k in category %}
-                 <li><input name = "cat" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.title }}>{{ k.title }}</label></li>
+                 <li><input name = "cat" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.id }}>{{ k.title }}</label></li>
                {%  endfor %}
             </ul>
         </div>
+
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
 </form>
@@ -93,15 +95,15 @@
                     <div class="recipe_info">
                         <div>
                             <h4 class="info_name">ВреMя</h4>
-                            <h5 class="info_value">15<br> минут</h5>
+                            <h5 class="info_value">{{ recipe.time }}<br> минут</h5>
                         </div>
                         <div>
                             <h4 class="info_name">Сложность</h4>
-                            <h5 class="info_value">3</h5>
+                            <h5 class="info_value">{{ recipe.diff }}</h5>
                         </div>
                         <div>
                             <h4 class="info_name">Калории</h4>
-                            <h5 class="info_value">245ккал<br>100 грамм</h5>
+                            <h5 class="info_value">{{ recipe.cal }}<br>100 грамм</h5>
                         </div>
                         <div>
                             <h4 class="info_name">Рейтинг</h4>

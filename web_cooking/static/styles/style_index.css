@@ -362,7 +362,7 @@ main a[role="button"]:hover {
 }
 
 
-input[type="text"] {
+input[name *= "choose"] {
   display: none;
 }
 
@@ -434,40 +434,46 @@ input[type="text"] {
   display: none;
 }
 .dropdown_cousine label {
-  display: block;
-  position: relative;
-  padding-left: 22px;
+  padding-left: 10px;
   cursor: pointer;
 }
-.dropdown_cousine label:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 4px;
-  width: 15px;
-  height: 15px;
-  border: 2px solid black;
+/*.dropdown_cousine label:before {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  left: 0;*/
+/*  top: 4px;*/
+/*  width: 15px;*/
+/*  height: 15px;*/
+/*  border: 2px solid black;*/
+/*}*/
+.dropdown_cousine input[type="radio"]:checked ~ label:before {
 }
-.dropdown_cousine input[type="checkbox"]:checked ~ label:before {
+/*.dropdown_cousine label:after {*/
+/*  content: '';*/
+/*  position: absolute;*/
+/*  display: block;*/
+/*  width: 5px;*/
+/*  height: 12px;*/
+/*  top: 0px;*/
+/*  left: 6px;*/
+/*  border: 3px solid black;*/
+/*  border-top-color: transparent;*/
+/*  border-left-color: transparent;*/
+/*  -webkit-transform: rotate(45deg);*/
+/*  transform: rotate(45deg);*/
+/*  z-index: 2;*/
+/*  opacity: 0;*/
+/*  visibility: hidden;*/
+/*}*/
+.s0 input[type="checkbox"]:checked ~ label:after {
+  opacity: 1;
+  visibility: visible;
 }
-.dropdown_cousine label:after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 5px;
-  height: 12px;
-  top: 0px;
-  left: 6px;
-  border: 3px solid black;
-  border-top-color: transparent;
-  border-left-color: transparent;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  z-index: 2;
-  opacity: 0;
-  visibility: hidden;
+.s1 input[type="checkbox"]:checked ~ label:after {
+  opacity: 1;
+  visibility: visible;
 }
-.dropdown_cousine input[type="checkbox"]:checked ~ label:after {
+.s2 input[type="checkbox"]:checked ~ label:after {
   opacity: 1;
   visibility: visible;
 }
@@ -531,6 +537,10 @@ input[type="text"] {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+
+.recipes_hidden a{
+	color: white
 }
 
 .recipe_block h2{
