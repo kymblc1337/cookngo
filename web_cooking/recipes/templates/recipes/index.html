@@ -84,12 +84,13 @@
             </div>
         </div>
         <div class="recipes_hidden">
+            {% load el_pagination_tags %}
+            {% paginate object_list %}
             {% for recipe in object_list %}
                 <div class="recipe_block">
                     {% if recipe.image %}
                         <img src="{{ MEDIA_URL }}{{ recipe.image.url }}">
                     {% endif %}
-                    <!--                    <img src="static/recipes_img/crsar.jpg" alt="">-->
                     <h2>{{ recipe.title }}</h2>
                     <p class="description">{{ recipe.description }}</p>
                     <div class="recipe_info">
@@ -112,17 +113,21 @@
                     </div>
                 </div>
             {% endfor %}
-            {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
-
-            <span class="current">
-                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
-            </span>
-
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-            {% endif %}
+            {% show_more %}
+{#            {% for recipe in object_list %}#}
+{#                #}
+{#            {% endfor %}#}
+{#            {% if page_obj.has_previous %}#}
+{#                <a href="?page={{ page_obj.previous_page_number }}">previous</a>#}
+{#            {% endif %}#}
+{##}
+{#            <span class="current">#}
+{#                Page {{ page_obj.number }} of {{ paginator.num_pages }}.#}
+{#            </span>#}
+{##}
+{#            {% if page_obj.has_next %}#}
+{#                <a href="?page={{ page_obj.next_page_number }}">next</a>#}
+{#            {% endif %}#}
         </div>
 
     </div>

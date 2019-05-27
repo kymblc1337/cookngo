@@ -60,7 +60,6 @@ def is_valid_queryparam(param):
 
 class Index(ListView):
     template_name = "recipes\index.html"
-    paginate_by = 3
 
     def get(self, request, *args, **kwargs):
         ds = request.GET.get('title_contains')
@@ -101,3 +100,25 @@ class Add_view(View):
             'form': form
         }
         return render(self.request, 'recipes/detail', context)
+
+from el_pagination.views import AjaxListView
+
+class EntryListView(AjaxListView):
+    context_object_name = "object_list"
+    template_name = "recipes/object_list.html"
+    page_template = 'recipes/index.html'
+
+    def get_queryset(self):
+        return Recipe.objects.all()
+
+from el_pagination.decorators import page_template
+
+@page_template('recipes/index.html')  # just add this decorator
+def entry_list(request,
+        template='recipes/object_list.html', extra_context=None):
+    context = {
+        'object_list': Recipe.objects.all(),
+    }
+    if extra_context is not None:
+        context.update(extra_context)
+    return render(request, template, context)
