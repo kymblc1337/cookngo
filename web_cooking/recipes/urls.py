@@ -1,7 +1,7 @@
 from . import  views
 from django.contrib import admin
 from django.urls import path
-from .views import login,logout,registration,Add_view
+from .views import login,logout,registration,Add_view,post_update
 
 admin.autodiscover()
 
@@ -11,5 +11,6 @@ urlpatterns = [
     path('login', login),
     path('accounts/logout', logout),
     path('accounts/reg', registration),
-    path('add/', Add_view.as_view())
+    path('add/', Add_view.as_view()),
+    path('<int:id>/edit', post_update),
 ]

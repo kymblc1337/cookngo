@@ -12,7 +12,7 @@ from .forms import Add_recipe_form
 from django.http import HttpResponseRedirect
 
 def post_detail(request, id = None):
-    obj = get_object_or_404(Recipe, id = id)
+    obj = get_object_or_404(Recipe, id=id)
     context = {
         "title": obj.title,
         "obj": obj
@@ -101,4 +101,19 @@ class Add_view(View):
             'form': form
         }
         return render(self.request, 'recipes/detail', context)
+
+def post_update(request, id=None):
+    instance = get_object_or_404(Recipe, id=id)
+    form = Add_recipe_form(request.POST or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return HttpResponseRedirect(instance.get_absolute_url())
+    context = {
+        'title': instance.title,
+        'instance': instance,
+        'form': form,
+    }
+    return render(request, 'recipes/add.html', context)
+
 
