@@ -132,6 +132,7 @@ class Add_view(View):
         form = Add_recipe_form(request.POST or  None, request.FILES or None)
         if form.is_valid():
             instance = form.save(commit = False)
+            instance.user = request.user
             instance.save()
             return HttpResponseRedirect(instance.get_absolute_url())
         context = {
