@@ -1,38 +1,37 @@
 {% extends 'recipes/base.html' %}
 {% block content %}
 <main class="container">
-
 <form method="get" action="">
     <div class="ingredients_choice">
-        <input name="choose_cousine" value="val2, val5" type="text">
+        <input name="choose_cousine" value="name" type="text">
         <div class="dropdown_cousine 0s">
             <a href="javascript:void(0);" class="white-bg">
                 <span class="open">Кухня</span>
             </a>
             <ul class="choose_cousine_menu" style="display: block;">
                {% for k in cousins %}
-                 <li><input name="cousine" type="radio" value={{ k.title }} id={{ k.title }}><label for={{ k.title }}>{{ k.title }}</label></li>
+                 <li><input name="cousine" type="radio" value = {{ k.id }} id={{ k.id }}><label for={{ k.id}}>{{ k.title }}</label></li>
                {%  endfor %}
             </ul>
 
 
         </div>
-        <input name="choose_menu" value="val2, val5" type="text">
+        <input name="choose_menu" value="2" type="text">
         <div class="dropdown_cousine 1s">
             <a href="javascript:void(0);">
                 <span class="open">Меню</span></a>
             <ul class="choose_cousine_menu" style="display: block;">
                 {% for k in menues %}
-                <li><input name = "menu" type="radio" value={{ k.title }} id={{ k.title }}><label for={{ k.title }}>{{ k.title }}</label></li>
+                <li><input name = "menu" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.title }}>{{ k.title }}</label></li>
                 {% endfor %}
             </ul>
         </div>
-        <input name="choose_category" value="val2, val5" type="text">
+        <input name="choose_category" value="3" type="text">
         <div class="dropdown_cousine 2s"><a href="javascript:void(0);" class="white-bg">
             <span class="open">Категория</span></a>
             <ul class="choose_cousine_menu" style="display: block;">
                 {% for k in category %}
-                 <li><input name = "cat" type="radio" value={{ k.title }} id={{ k.title }}><label for={{ k.title }}>{{ k.title }}</label></li>
+                 <li><input name = "cat" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.title }}>{{ k.title }}</label></li>
                {%  endfor %}
             </ul>
         </div>

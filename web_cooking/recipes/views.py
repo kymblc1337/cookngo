@@ -65,19 +65,22 @@ class Index(ListView):
 
     def get(self, request, *args, **kwargs):
         search_filter = request.GET.get('search')
-        menu_filter = request.GET.get('menu')
-        cous_filter = request.GET.get('cousine')
-        cat_filter = request.GET.get('cats')
+        menu_id = request.GET.get('menu')
+        cous_id = request.GET.get('cousine')
+        cat_id = request.GET.get('cat')
         if is_valid_queryparam(search_filter):
             self.recipe_search =  Recipe.objects.filter(title__contains=search_filter)
         else:
             self.recipe_search = Recipe.objects.all()
-        if is_valid_queryparam(menu_filter):
-            self.recipe_search = Recipe.objects.filter(menu= menu_filter)
-        if is_valid_queryparam(cous_filter):
-            self.recipe_search = Recipe.objects.filter(kitchen= cous_filter)
-        if is_valid_queryparam(cat_filter):
-            self.recipe_search = Recipe.objects.filter(category= cat_filter)
+        if is_valid_queryparam(menu_id):
+            menu_filter = Menu.objects.get(pk = menu_id)
+            self.recipe_search = self.recipe_search.filter(menu = menu_filter)
+        if is_valid_queryparam(cous_id):
+            kitchen_filter = Kitchen.objects.get(pk = cous_id)
+            self.recipe_search = self.recipe_search.filter(kitchen = kitchen_filter)
+        if is_valid_queryparam(cat_id):
+            cat_filter = Category.objects.get(pk = cat_id)
+            self.recipe_search = self.recipe_search.filter(category = cat_filter)
 
 
         return super(Index, self).get(request, *args, **kwargs)
