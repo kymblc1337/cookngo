@@ -1,4 +1,4 @@
-$('a.endless_more').on('click',null,null,function(e){
+$('a.contrlbut').on('click',null,null,function(e){
     e.preventDefault();
     var url=this.href;
 

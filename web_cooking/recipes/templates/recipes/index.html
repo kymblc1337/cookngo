@@ -88,14 +88,8 @@
                 <button class="date">Дате публикации</button>
             </div>
         </div>
-<<<<<<< HEAD
         <div id="content" class="recipes_hidden">
         <div id="container">
-            {% load el_pagination_tags %}
-            {% paginate object_list %}
-=======
-        <div class="recipes_hidden">
->>>>>>> d83b2a07421ffc5f872eb8007965a71d2e464009
             {% for recipe in object_list %}
                  <a href={% url 'detail' recipe.id %}>
                 <div class="recipe_block">
@@ -127,7 +121,7 @@
                  </a>
             {% endfor %}
             {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                <a class="contrlbut" href="?page={{ page_obj.previous_page_number }}">previous</a>
             {% endif %}
 
             <span class="current">
@@ -135,7 +129,7 @@
             </span>
 
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a class="contrlbut" href="?page={{ page_obj.next_page_number }}">next</a>
             {% endif %}
         </div>
         </div>
