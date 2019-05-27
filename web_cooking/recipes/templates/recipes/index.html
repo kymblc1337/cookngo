@@ -87,6 +87,7 @@
             {% load el_pagination_tags %}
             {% paginate object_list %}
             {% for recipe in object_list %}
+                 <a href={% url 'detail' recipe.id %}>
                 <div class="recipe_block">
                     {% if recipe.image %}
                         <img src="{{ MEDIA_URL }}{{ recipe.image.url }}">
@@ -112,6 +113,7 @@
                         </div>
                     </div>
                 </div>
+                 </a>
             {% endfor %}
             {% show_more %}
 {#            {% for recipe in object_list %}#}
