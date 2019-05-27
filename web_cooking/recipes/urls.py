@@ -6,7 +6,7 @@ from .views import login,logout,registration,Add_view
 admin.autodiscover()
 
 urlpatterns = [
-    path('', views.Index.as_view(), name ="home"),
+    path('', views.Detail.as_view(), name ="home"),
     path('info/<int:id>', views.post_detail, name = 'detail'),
     path('login', login),
     path('accounts/logout', logout),

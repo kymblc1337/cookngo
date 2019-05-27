@@ -58,8 +58,8 @@ def logout(request):
 def is_valid_queryparam(param):
     return param != '' and param is not None
 
-class Index(ListView):
-    template_name = "recipes\index.html"
+class Detail(ListView):
+    template_name = "recipes\detail.html"
 
     def get(self, request, *args, **kwargs):
         ds = request.GET.get('title_contains')
@@ -68,10 +68,10 @@ class Index(ListView):
         else:
             self.recipe_search = Recipe.objects.all()
 
-        return super(Index, self).get(request, *args, **kwargs)
+        return super(Detail, self).get(request, *args, **kwargs)
 
     def get_context_data(self,  **kwargs):
-        context = super(Index, self).get_context_data(**kwargs)
+        context = super(Detail, self).get_context_data(**kwargs)
         context["cats"] = Category.objects.order_by("title")
         context["category"] = Category.objects.all()
         return context
