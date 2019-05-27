@@ -362,7 +362,7 @@ main a[role="button"]:hover {
 }
 
 
-input[type="text"] {
+input[name *= "choose"] {
   display: none;
 }
 
