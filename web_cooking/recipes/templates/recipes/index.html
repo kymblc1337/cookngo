@@ -103,30 +103,43 @@
                         </div>
                         <div>
                             <h4 class="info_name">Калории</h4>
-                            <h5 class="info_value">{{ recipe.cal }}<br>100 грамм</h5>
+                            <h5 class="info_value">{{ recipe.cal }} ккал<br>100 грамм</h5>
                         </div>
                         <div>
-                            <h4 class="info_name">Рейтинг</h4>
-                            <h5 class="info_value">6</h5>
+                            <h4 class="info_name">Просмотры</h4>
+                            <h5 class="info_value">{{ recipe.views }}</h5>
                         </div>
                     </div>
                 </div>
                  </a>
             {% endfor %}
-            {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
 
-            <span class="current">
-                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
-            </span>
+        </div>
+        <div class="recipe_pages">
+            <div class="previous">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Предыдущая страница</a>
+                {% else %}
+                    <span>Следующая страница</span>
+                {% endif %}
+            </div>
 
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-            {% endif %}
+            <div class="current_page">
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+                </span>
+            </div>
+            <div class="next">
+                {% if page_obj.has_next %}
+                    <div class="non-blocked"></div>
+                    <a href="?page={{ page_obj.next_page_number }}">Следующая страница</a>
+                {% else %}
+                    <div class="blocked">Следующая страница</div>
+                {% endif %}
+            </div>
+
         </div>
 
     </div>
-    </section>
 </main>
 {% endblock %}

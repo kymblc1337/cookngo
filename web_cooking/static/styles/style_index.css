@@ -593,3 +593,47 @@ input[name *= "choose"] {
 	font-family: AvantGardeCTT;
 	display: inline-block;
 }
+
+.recipe_pages {
+	display: flex;
+	justify-content: space-around;
+}
+
+.previous, .next {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+  	display: block;
+  	text-decoration: none;
+  	color: #fff;
+  	font-family: 'IntroInline';
+  	background-color: transparent;
+ 	padding: 12px 20px 10px;
+ 	text-transform: uppercase;
+ 	border: 3px solid white;
+  	font-size: 18px;
+  	text-align: center;
+}
+
+.previous:hover, .next:hover {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+	background-color: white;
+	color: black;
+}
+
+.next span, .previous span {
+	color: red;
+	background-color: #9b9696;
+}
+
+a {
+  	text-decoration:none;
+	color: white;
+}
+
+.blocked {
+	background-color: #494949;
+	padding: 12px 20px 10px;
+}
