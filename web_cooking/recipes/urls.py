@@ -1,7 +1,9 @@
 from . import  views
 from django.contrib import admin
 from django.urls import path
-from .views import login,logout,registration,Add_view, userpage
+
+from .views import login,logout,registration,Add_view,post_update, post_delete, userpage
+
 
 admin.autodiscover()
 
@@ -13,4 +15,6 @@ urlpatterns = [
     path('accounts/registration/', registration),
     path('add/', Add_view.as_view()),
     path('userpage/<int:pageid>', userpage),
+    path('<int:id>/edit', post_update, name = 'edit'),
+    path('delete/<int:id>', post_delete, name = 'delete'),
 ]

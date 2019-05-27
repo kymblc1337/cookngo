@@ -11,6 +11,7 @@ from django.views import View
 from .forms import Add_recipe_form
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 
 
 def userpage(request, pageid =  None):
@@ -32,7 +33,7 @@ def userpage(request, pageid =  None):
         return redirect('/')
 
 def post_detail(request, id = None):
-    obj = get_object_or_404(Recipe, id = id)
+    obj = get_object_or_404(Recipe, id=id)
     context = {
         "title": obj.title,
         "obj": obj
@@ -83,18 +84,34 @@ class Index(ListView):
     paginate_by = 3
 
     def get(self, request, *args, **kwargs):
-        ds = request.GET.get('title_contains')
-        if is_valid_queryparam(ds):
-            self.recipe_search =  Recipe.objects.filter(title__contains=ds)
+        search_filter = request.GET.get('search')
+        menu_id = request.GET.get('menu')
+        cous_id = request.GET.get('cousine')
+        cat_id = request.GET.get('cat')
+        if is_valid_queryparam(search_filter):
+            self.recipe_search =  Recipe.objects.filter(title__contains=search_filter)
         else:
             self.recipe_search = Recipe.objects.all()
+        if is_valid_queryparam(menu_id):
+            menu_filter = Menu.objects.get(pk = menu_id)
+            self.recipe_search = self.recipe_search.filter(menu = menu_filter)
+        if is_valid_queryparam(cous_id):
+            kitchen_filter = Kitchen.objects.get(pk = cous_id)
+            self.recipe_search = self.recipe_search.filter(kitchen = kitchen_filter)
+        if is_valid_queryparam(cat_id):
+            cat_filter = Category.objects.get(pk = cat_id)
+            self.recipe_search = self.recipe_search.filter(category = cat_filter)
+
 
         return super(Index, self).get(request, *args, **kwargs)
+
 
     def get_context_data(self,  **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
         context["cats"] = Category.objects.order_by("title")
         context["category"] = Category.objects.all()
+        context["cousins"] = Kitchen.objects.all()
+        context["menues"]  = Menu.objects.all()
         return context
 
     def get_queryset(self):
@@ -121,4 +138,25 @@ class Add_view(View):
             'form': form
         }
         return render(self.request, 'recipes/detail', context)
+
+def post_update(request, id=None):
+    instance = get_object_or_404(Recipe, id=id)
+    form = Add_recipe_form(request.POST or None, request.FILES or None,instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return HttpResponseRedirect(instance.get_absolute_url())
+    context = {
+        'title': instance.title,
+        'instance': instance,
+        'form': form,
+    }
+    return render(request, 'recipes/add.html', context)
+
+def post_delete(request, id=None):
+    instance = get_object_or_404(Recipe, id=id)
+    instance.delete()
+    return redirect('/')
+
+
 
