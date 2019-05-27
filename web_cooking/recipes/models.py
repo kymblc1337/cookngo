@@ -28,6 +28,10 @@ class Recipe(models.Model):
     menu = models.ForeignKey(Menu, null = True, blank = True,
                              on_delete = models.SET_NULL)
 
+    time = models.IntegerField(null=True, blank=True)
+    cal = models.IntegerField(null=True, blank=True)
+
+
     DIFFICULTY = (
         (1, '1'),
         (2, '2'),

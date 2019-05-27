@@ -1,4 +1,5 @@
 {% load crispy_forms_tags %}
+<img class="image" src="{{ recipes_img }}">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +9,7 @@
 <div class='container'>
     <div class='row'>
          <div class='col-sm6 col-sm-offset-4'>
-             <form action='' method="POST">
+             <form action='' method="POST",  enctype="multipart/form-data">
                  {% csrf_token %}
 
                  <div class="fieldWrapper">
@@ -18,7 +19,7 @@
                  </div>
                  <div class="fieldWrapper">
                         {{ form.description.errors }}
-                        <label for="{{ form.description.id_for_label }}">Название рецепта:</label>
+                        <label for="{{ form.description.id_for_label }}">Описание рецепта:</label>
                         {{ form.description }}
                  </div>
                  <div class="fieldWrapper">
@@ -28,18 +29,28 @@
                  </div>
                  <div class="fieldWrapper">
                         {{ form.diff.errors }}
-                        <label for="{{ form.diff.id_for_label }}">Название рецепта:</label>
+                        <label for="{{ form.diff.id_for_label }}">Сложность рецепта:</label>
                         {{ form.diff }}
                  </div>
                  <div class="fieldWrapper">
                         {{ form.kitchen.errors }}
-                        <label for="{{ form.kitchen.id_for_label }}">Название рецепта:</label>
+                        <label for="{{ form.kitchen.id_for_label }}">Кухня:</label>
                         {{ form.kitchen }}
                  </div>
                  <div class="fieldWrapper">
                         {{ form.category.errors }}
-                        <label for="{{ form.category.id_for_label }}">Название рецепта:</label>
+                        <label for="{{ form.category.id_for_label }}">Категория:</label>
                         {{ form.category }}
+                 </div>
+                 <div class="fieldWrapper">
+                        {{ form.time.errors }}
+                        <label for="{{ form.time.id_for_label }}">Время приготовления:</label>
+                        {{ form.time}}
+                 </div>
+                 <div class="fieldWrapper">
+                        {{ form.cal.errors }}
+                        <label for="{{ form.cal.id_for_label }}">Калорийность:</label>
+                        {{ form.time }}
                  </div>
                  <input type='submit' value='Добавить рецепт'>
              </form>
