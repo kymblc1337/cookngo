@@ -131,11 +131,15 @@ class Add_view(View):
     template_name = 'recipes/add.html'
 
     def get(self, request, *args, **kwargs):
-        form = Add_recipe_form()
-        context = {
-            'form': form
-        }
-        return render(self.request, self.template_name, context)
+        if request.user.is_authenticated:
+            form = Add_recipe_form()
+            context = {
+                'form': form
+            }
+            return render(self.request, self.template_name, context)
+        else:
+            return redirect('/')
+
 
     def post(self, request, *args, **kwargs):
         form = Add_recipe_form(request.POST or  None, request.FILES or None)
@@ -150,18 +154,22 @@ class Add_view(View):
         return render(self.request, 'recipes/detail', context)
 
 def post_update(request, id=None):
+    current_user = request.user
     instance = get_object_or_404(Recipe, id=id)
-    form = Add_recipe_form(request.POST or None, request.FILES or None,instance=instance)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return HttpResponseRedirect(instance.get_absolute_url())
-    context = {
-        'title': instance.title,
-        'instance': instance,
-        'form': form,
-    }
-    return render(request, 'recipes/add.html', context)
+    if instance.user == current_user:
+        form = Add_recipe_form(request.POST or None, request.FILES or None,instance=instance)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.save()
+            return HttpResponseRedirect(instance.get_absolute_url())
+        context = {
+            'title': instance.title,
+            'instance': instance,
+            'form': form,
+        }
+        return render(request, 'recipes/add.html', context)
+    else :
+        return redirect('/')
 
 def post_delete(request, id=None):
     instance = get_object_or_404(Recipe, id=id)
