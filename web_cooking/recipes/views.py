@@ -132,7 +132,7 @@ class Add_view(View):
             }
             return render(self.request, self.template_name, context)
         else:
-            return redirect('/')
+            return redirect('/accounts/login')
 
 
     def post(self, request, *args, **kwargs):
