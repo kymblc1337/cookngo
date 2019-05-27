@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'IntroInline';
-    src: url('..static/fonts/IntroInline/Intro.otf') format('opentype');
+    src: url('../fonts/IntroInline/Intro.otf') format('opentype');
 }
 body{
-	background: url('..static/img/background2.jpg');
+	background: url(../img/background.jpg);
 	color: white;
 	font-size: 30px;
 	font-weight: 300;
@@ -13,6 +13,7 @@ body{
 	width:1300px;
 	margin-left: 280px;
 	border-bottom: none;
+	font-weight: normal;
 }
 img{
 	width:600px;
