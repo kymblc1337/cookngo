@@ -131,11 +131,15 @@ class Add_view(View):
     template_name = 'recipes/add.html'
 
     def get(self, request, *args, **kwargs):
-        form = Add_recipe_form()
-        context = {
-            'form': form
-        }
-        return render(self.request, self.template_name, context)
+        if request.user.is_authenticated:
+            form = Add_recipe_form()
+            context = {
+                'form': form
+            }
+            return render(self.request, self.template_name, context)
+        else:
+            return redirect('/')
+
 
     def post(self, request, *args, **kwargs):
         form = Add_recipe_form(request.POST or  None, request.FILES or None)
@@ -150,7 +154,7 @@ class Add_view(View):
         return render(self.request, 'recipes/detail', context)
 
 def post_update(request, id=None):
-    current_user= request.user
+    current_user = request.user
     instance = get_object_or_404(Recipe, id=id)
     if instance.user == current_user:
         form = Add_recipe_form(request.POST or None, request.FILES or None,instance=instance)
