@@ -10,6 +10,7 @@ from .models import Category, Recipe, Kitchen, Menu
 from django.views import View
 from .forms import Add_recipe_form
 from django.http import HttpResponseRedirect
+from django.db.models import Q
 
 def post_detail(request, id = None):
     obj = get_object_or_404(Recipe, id = id)
@@ -63,18 +64,31 @@ class Index(ListView):
     paginate_by = 3
 
     def get(self, request, *args, **kwargs):
-        ds = request.GET.get('title_contains')
-        if is_valid_queryparam(ds):
-            self.recipe_search =  Recipe.objects.filter(title__contains=ds)
+        search_filter = request.GET.get('search')
+        menu_filter = request.GET.get('menu')
+        cous_filter = request.GET.get('cousine')
+        cat_filter = request.GET.get('cats')
+        if is_valid_queryparam(search_filter):
+            self.recipe_search =  Recipe.objects.filter(title__contains=search_filter)
         else:
             self.recipe_search = Recipe.objects.all()
+        if is_valid_queryparam(menu_filter):
+            self.recipe_search = Recipe.objects.filter(menu= menu_filter)
+        if is_valid_queryparam(cous_filter):
+            self.recipe_search = Recipe.objects.filter(kitchen= cous_filter)
+        if is_valid_queryparam(cat_filter):
+            self.recipe_search = Recipe.objects.filter(category= cat_filter)
+
 
         return super(Index, self).get(request, *args, **kwargs)
+
 
     def get_context_data(self,  **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
         context["cats"] = Category.objects.order_by("title")
         context["category"] = Category.objects.all()
+        context["cousins"] = Kitchen.objects.all()
+        context["menues"]  = Menu.objects.all()
         return context
 
     def get_queryset(self):
