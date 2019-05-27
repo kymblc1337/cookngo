@@ -5,9 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-<h2>Username: {{ name }}</h2><br>
-<h2>id: {{ id }}</h2><br>
-<h2>last login: {{ last_seen }}</h2>
-<h2>user recipes: {{ recipes_list }}</h2>
+<h2>Username: {{ obj.username }}</h2><br>
+<h3>Last login: {{ obj.last_login }}</h3><br>
+<h2>{{ obj.username }} recipes:</h2>
+{% for k in recipes_list %}
+    <h4>Title:{{ k.title }}</h4>
+    <h4>Description: {{ k.description }}</h4>
+    <h4>Category:{{ k.category }}</h4>
+    <h4>Kitchen: {{ k.kitchen }}</h4>
+    <h4>Menu: {{ k.menu }}</h4>
+    <h4>Diff: {{ k.diff }}</h4>
+    <br>
+{% endfor %}
 </body>
 </html>

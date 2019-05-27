@@ -14,8 +14,7 @@ urlpatterns = [
     path('accounts/logout', logout),
     path('accounts/registration/', registration),
     path('add/', Add_view.as_view()),
-    path('userpage/', userpage),
+    path('userpage/<int:pageid>', userpage),
     path('<int:id>/edit', post_update, name = 'edit'),
     path('delete/<int:id>', post_delete, name = 'delete'),
-
 ]
