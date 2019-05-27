@@ -10,7 +10,7 @@
     <div class='row'>
          <div class='col-sm6 col-sm-offset-4'>
              <form action='' method="POST",  enctype="multipart/form-data">
-                 {% csrf_token %}
+
 
                  <div class="fieldWrapper">
                         {{ form.title.errors }}
@@ -42,6 +42,11 @@
                         <label for="{{ form.category.id_for_label }}">Категория:</label>
                         {{ form.category }}
                  </div>
+                  <div class="fieldWrapper">
+                        {{ form.menu.errors }}
+                        <label for="{{ form.menu.id_for_label }}">Меню:</label>
+                        {{ form.menu }}
+                 </div>
                  <div class="fieldWrapper">
                         {{ form.time.errors }}
                         <label for="{{ form.time.id_for_label }}">Время приготовления:</label>
@@ -50,9 +55,10 @@
                  <div class="fieldWrapper">
                         {{ form.cal.errors }}
                         <label for="{{ form.cal.id_for_label }}">Калорийность:</label>
-                        {{ form.time }}
+                        {{ form.cal }}
                  </div>
                  <input type='submit' value='Добавить рецепт'>
+                  {% csrf_token %}
              </form>
          </div>
     </div>
