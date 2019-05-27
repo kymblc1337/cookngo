@@ -1,0 +1,138 @@
+{% extends 'recipes/base.html' %}
+{% block content %}
+<main class="container">
+    <div class="ingredients_choice">
+        <input name="choose_cousine" value="val2, val5" type="text">
+        <div class="dropdown_cousine 0s">
+            <a href="javascript:void(0);" class="white-bg">
+                <span class="open">Кухня</span>
+            </a>
+            <ul class="choose_cousine_menu" style="display: block;">
+                <li><input type="checkbox" value="first" id="first1"><label for="first1">undefined</label></li>
+                <li><input type="checkbox" value="second" id="second1"><label for="second1">undefined</label></li>
+                <li><input type="checkbox" value="third" id="third1"><label for="third1">undefined</label></li>
+            </ul>
+        </div>
+        <input name="choose_menu" value="val2, val5" type="text">
+        <div class="dropdown_cousine 1s">
+            <a href="javascript:void(0);">
+                <span class="open">Меню</span></a>
+            <ul class="choose_cousine_menu" style="display: block;">
+                {% for k in category %}
+                <li><input type="checkbox" value={{ k.title }} id={{ k.title }}><label for={{ k.title }}>{{ k.title }}</label></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <input name="choose_category" value="val2, val5" type="text">
+        <div class="dropdown_cousine 2s"><a href="javascript:void(0);" class="white-bg">
+            <span class="open">Категория</span></a>
+            <ul class="choose_cousine_menu" style="display: block;">
+                <li><input type="checkbox" value="first" id="first2"><label for="first2">undefined</label></li>
+                <li><input type="checkbox" value="second" id="second2"><label for="second2">undefined</label></li>
+                <li><input type="checkbox" value="third" id="third2"><label for="third2">undefined</label></li>
+            </ul>
+        </div>
+        <input name="choose_dish" value="val2, val5" type="text">
+        <div class="dropdown_cousine 3s">
+            <a href="javascript:void(0);" class="white-bg"><span class="open">Блюдо</span></a>
+            <ul class="choose_cousine_menu" style="display: block;">
+                <li><input type="checkbox" value="first" id="first3"><label for="first3">undefined</label></li>
+                <li><input type="checkbox" value="second" id="second3"><label for="second3">undefined</label></li>
+                <li><input type="checkbox" value="third" id="third3"><label for="third3">undefined</label></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="awSlider">
+        <div id="slider_main" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#slider_main" data-slide-to="0" class="active"></li>
+                <li data-target="#slider_main" data-slide-to="1"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <a href="#"><img src="static/img/slider/1.jpg" class="d-block w-100"></a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#"><img src="static/img/slider/2.png" class="d-block w-100"></a>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#slider_main" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Prev</span>
+            </a>
+            <a class="carousel-control-next" href="#slider_main" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        </div>
+    </section>
+    <div class="container recipes_main">
+        <div class="sortmenu">
+            <h2>Еженедельная подборка</h2>
+            <div class="sort">
+                <h3>Сортировка по:</h3>
+                <button class="popularity">Популярности</button>
+                <button class="rating">Рейтингу</button>
+                <button class="date">Дате публикации</button>
+            </div>
+        </div>
+        <div class="recipes_hidden">
+            {% load el_pagination_tags %}
+            {% paginate object_list %}
+            {% for recipe in object_list %}
+                 <a href={% url 'detail' recipe.id %}>
+                <div class="recipe_block">
+                    {% if recipe.image %}
+                        <img src="{{ MEDIA_URL }}{{ recipe.image.url }}">
+                    {% endif %}
+                    <h2>{{ recipe.title }}</h2>
+                    <p class="description">{{ recipe.description }}</p>
+                    <div class="recipe_info">
+                        <div>
+                            <h4 class="info_name">ВреMя</h4>
+                            <h5 class="info_value">15<br> минут</h5>
+                        </div>
+                        <div>
+                            <h4 class="info_name">Сложность</h4>
+                            <h5 class="info_value">3</h5>
+                        </div>
+                        <div>
+                            <h4 class="info_name">Калории</h4>
+                            <h5 class="info_value">245ккал<br>100 грамм</h5>
+                        </div>
+                        <div>
+                            <h4 class="info_name">Рейтинг</h4>
+                            <h5 class="info_value">6</h5>
+                        </div>
+                    </div>
+                </div>
+                 </a>
+            {% endfor %}
+            {% show_more %}
+{#            {% for recipe in object_list %}#}
+{#                #}
+{#            {% endfor %}#}
+{#            {% if page_obj.has_previous %}#}
+{#                <a href="?page={{ page_obj.previous_page_number }}">previous</a>#}
+{#            {% endif %}#}
+{##}
+{#            <span class="current">#}
+{#                Page {{ page_obj.number }} of {{ paginator.num_pages }}.#}
+{#            </span>#}
+{##}
+{#            {% if page_obj.has_next %}#}
+{#                <a href="?page={{ page_obj.next_page_number }}">next</a>#}
+{#            {% endif %}#}
+        </div>
+
+    </div>
+    </section>
+</main>
+{% endblock %}

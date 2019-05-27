@@ -1,4 +1,4 @@
-### Django ###
+﻿### Django ###
 *.log
 *.pot
 *.pyc
@@ -130,3 +130,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea/
+
+myvenv/
