@@ -1,4 +1,4 @@
-### Django ###
+﻿### Django ###
 *.log
 *.pot
 *.pyc
@@ -134,6 +134,3 @@ dmypy.json
 .idea/
 
 myvenv/
-
-*.png
-*.jpg

@@ -7,6 +7,9 @@ from django.template.context_processors import csrf
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from .models import Category, Recipe, Kitchen, Menu
+from django.views import View
+from .forms import Add_recipe_form
+from django.http import HttpResponseRedirect
 
 def post_detail(request, id = None):
     obj = get_object_or_404(Recipe, id = id)
@@ -57,7 +60,7 @@ def is_valid_queryparam(param):
 
 class Index(ListView):
     template_name = "recipes\index.html"
-    paginate_by = 2
+    paginate_by = 3
 
     def get(self, request, *args, **kwargs):
         ds = request.GET.get('title_contains')
@@ -71,8 +74,31 @@ class Index(ListView):
     def get_context_data(self,  **kwargs):
         context = super(Index, self).get_context_data(**kwargs)
         context["cats"] = Category.objects.order_by("title")
-        context["category"] = Category.objects.first()
+        context["category"] = Category.objects.all()
         return context
 
     def get_queryset(self):
         return self.recipe_search
+
+
+class Add_view(View):
+    template_name = 'recipes/add.html'
+
+    def get(self, request, *args, **kwargs):
+        form = Add_recipe_form()
+        context = {
+            'form': form
+        }
+        return render(self.request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        form = Add_recipe_form(request.POST or  None, request.FILES or None)
+        if form.is_valid():
+            instance = form.save(commit = False)
+            instance.save()
+            return HttpResponseRedirect(instance.get_absolute_url())
+        context = {
+            'form': form
+        }
+        return render(self.request, 'recipes/detail', context)
+

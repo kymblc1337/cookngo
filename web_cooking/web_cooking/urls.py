@@ -19,7 +19,8 @@ from django.urls import path
 from django.conf.urls import url, include
 from django.urls import include
 from django.conf.urls import url
-
+from django.conf import  settings
+from django.conf.urls .static import static
 
 admin.autodiscover()
 
@@ -27,6 +28,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('recipes.urls')),
 
-]
+]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #Add Django site authentication urls (for login, logout, password management)

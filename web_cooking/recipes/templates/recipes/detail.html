@@ -7,8 +7,21 @@
 <body>
 <h1>{{ title }}</h1>
 {{ obj.description }}<br>
+
+
+<p><img src="{{ MEDIA_URL }}{{ obj.image.url }}"</p> <br> <br>
+
+{{ obj.diff}}<br>
+{{ obj.kitchen }}<br>
+{{ obj.category }}<br>
+{{ obj.menu }}<br>
+{{ obj.time }}<br>
+{{ obj.cal }}<br>
 {{ obj.date }}<br>
+{{ obj.user }}<br>
 {{ obj.updated }}<br>
+
+
 
 
 </body>
