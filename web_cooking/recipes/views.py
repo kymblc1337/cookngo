@@ -15,16 +15,17 @@ from django.http import HttpResponseRedirect
 
 def userpage(request, pageid =  None):
     #current_user = get_object_or_404(User)
-    print("**********************************************************************")
-    print(request.user.is_authenticated)
-    print("**********************************************************************")
+    #print("**********************************************************************")
+    #print(request.user.is_authenticated)
+    #print("**********************************************************************")
     if request.user.is_authenticated:
         obj = get_object_or_404(User, id = pageid)
-        a = Recipe.objects.all().filter(user_id=pageid)
-        b = str(a)[11:-2].replace('<Recipe', '').replace('>', '')
-        b = b.replace(":", "")
+        recipes_list = Recipe.objects.all().filter(user_id=pageid)
+        #b = str(a)[11:-2].replace('<Recipe', '').replace('>', '')
+        #b = b.replace(":", "")
         data = {
-            "obj" : obj
+            "obj" : obj,
+            "recipes_list" : recipes_list
         }
         return render(request, "recipes/userpage.html", data)
     else:
