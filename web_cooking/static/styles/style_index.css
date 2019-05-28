@@ -376,18 +376,17 @@ input[name *= "choose"] {
 }
 
 .dropdown_cousine a:hover {
-	-webkit-transition: background 0.5s ease;
-	-moz-transition: background 0.5s ease;
-	transition: background 0.5s ease;
 	background-color: white;
 	color: black;
 }
 
-.find {
+.find_recipe {
+	border: none;
 	-webkit-transition: background 0.5s ease;
 	-moz-transition: background 0.5s ease;
 	transition: background 0.5s ease;
   	display: block;
+	min-width: 270px;
   	text-decoration: none;
   	color: #fff;
   	font-family: 'IntroInline';
@@ -399,6 +398,11 @@ input[name *= "choose"] {
   	text-align: center;
 }
 
+.find_recipe:hover {
+	background-color: white;
+	color: black;
+}
+
 .dropdown_cousine {
   display: table-cell;
   color: #333;
@@ -407,7 +411,7 @@ input[name *= "choose"] {
   padding-left: 0;
   padding-bottom: 5px;
   margin-top: 10px;
-  min-width: 250px;
+  min-width: 280px;
   height: 44px;
 }
 .dropdown_cousine a {
