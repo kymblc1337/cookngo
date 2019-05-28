@@ -8,7 +8,7 @@
             <a href="javascript:void(0);" class="white-bg">
                 <span class="open">Кухня</span>
             </a>
-            <ul class="choose_cousine_menu" style="display: block;">
+            <ul class="choose_cousine_menu">
                {% for k in cousins %}
                  <li><input name="cousine" type="radio" value = {{ k.id }} id={{ k.id }}><label for={{ k.id}}>{{ k.title }}</label></li>
                {%  endfor %}
@@ -16,29 +16,29 @@
 
 
         </div>
-        <input name="choose_menu" value="2" type="text">
+        <input name="choose_cousine_menu" value="2" type="text">
         <div class="dropdown_cousine s1">
             <a href="javascript:void(0);">
                 <span class="open">Меню</span>
             </a>
-            <ul class="choose_cousine_menu" style="display: block;">
+            <ul class="choose_cousine_menu">
                 {% for l in menues %}
                 <li><input name = "menu" type="radio" value={{ l.id }} id={{ l.id }}><label for={{ l.id }}>{{ l.title }}</label></li>
                 {% endfor %}
             </ul>
         </div>
-        <input name="choose_category" value="3" type="text">
+        <input name="choose_cousine_menu" value="3" type="text">
         <div class="dropdown_cousine s2"><a href="javascript:void(0);" class="white-bg">
             <span class="open">Категория</span></a>
-            <ul class="cat" style="display: block;">
+            <ul class="choose_cousine_menu">
                 {% for k in category %}
                  <li><input name = "cat" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.id }}>{{ k.title }}</label></li>
                {%  endfor %}
             </ul>
         </div>
-
+        <div class="dropdown_cousine"><button type="submit" class="find_recipe" name = "choose">Search</button></div>
     </div>
-    <button type="submit" class="btn btn-primary">Search</button>
+
 </form>
 
     <section class="awSlider">
@@ -103,30 +103,47 @@
                         </div>
                         <div>
                             <h4 class="info_name">Калории</h4>
-                            <h5 class="info_value">{{ recipe.cal }}<br>100 грамм</h5>
+                            <h5 class="info_value">{{ recipe.cal }} ккал<br>100 грамм</h5>
                         </div>
                         <div>
-                            <h4 class="info_name">Рейтинг</h4>
-                            <h5 class="info_value">6</h5>
+                            <h4 class="info_name">Просмотры</h4>
+                            <h5 class="info_value">{{ recipe.views }}</h5>
                         </div>
                     </div>
                 </div>
                  </a>
             {% endfor %}
-            {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
 
-            <span class="current">
-                Page {{ page_obj.number }} of {{ paginator.num_pages }}.
-            </span>
+        </div>
+        <div class="recipe_pages">
+            <div class="previous">
+                {% if page_obj.has_previous %}
+                    <div class="non-blocked">
+                        <a href="?page={{ page_obj.previous_page_number }}">Предыдущая страница</a>
+                    </div>
+                {% else %}
+                    <div class="blocked">Предыдущая страница</div>
+                {% endif %}
+            </div>
 
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-            {% endif %}
+            <div class="current_page">
+                <span class="current">
+                    Страница {{ page_obj.number }} из {{ paginator.num_pages }}
+                </span>
+            </div>
+            <div class="next">
+                {% if page_obj.has_next %}
+                    <div class="non-blocked">
+                        <a href="?page={{ page_obj.next_page_number }}">Следующая страница</a>
+                    </div>
+
+                {% else %}
+                        <div class="blocked">Следующая страница</div>
+                {% endif %}
+            </div>
+
         </div>
 
     </div>
-    </section>
 </main>
 {% endblock %}

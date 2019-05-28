@@ -3,7 +3,7 @@
 
 {% block content %}
 {% load widget_tweaks %}
-<main class="container">
+<main class="container add_float">
     <form action='' method="POST" , enctype="multipart/form-data">
         {% csrf_token %}
         <h1>Создай свой рецепт за пару секунд!</h1>
@@ -19,7 +19,7 @@
         <div class="fieldWrapper">
             {{ form.image.errors }}
             <label for="{{ form.image.id_for_label }}">Фото:</label>
-            {{ form.image }}
+            {{ form.image  | add_class:"input_image" }}
         </div>
         <div class="fieldWrapper">
             {{ form.diff.errors }}

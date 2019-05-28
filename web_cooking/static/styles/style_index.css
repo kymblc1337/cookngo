@@ -179,13 +179,14 @@ header {
 .navandlogo {
 	margin-bottom: 10px;
 	display: flex;
-	width: 60%;
+	width: 40%;
 }
 
 .auth-block {
 	margin-right: 1%;
-	width: 40%;
-	justify-content: flex-end;
+	width: 60%;
+	justify-content: flex-start;
+	padding-right: 150px;
 }
 
 .auth {
@@ -202,10 +203,6 @@ header {
 	transition: background 0.5s ease;
 	display: flex;
 	width: 123px;
-}
-
-.profile_top:hover {
-	background-color: white;
 }
 
 .profile_logo {
@@ -376,12 +373,33 @@ input[name *= "choose"] {
 }
 
 .dropdown_cousine a:hover {
-	-webkit-transition: background 0.5s ease;
-	-moz-transition: background 0.5s ease;
-	transition: background 0.5s ease;
 	background-color: white;
 	color: black;
 }
+
+.find_recipe {
+	border: none;
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+  	display: block;
+	min-width: 270px;
+  	text-decoration: none;
+  	color: #fff;
+  	font-family: 'IntroInline';
+  	background-color: transparent;
+ 	padding: 12px 20px 10px;
+ 	text-transform: uppercase;
+ 	border: 3px solid white;
+  	font-size: 18px;
+  	text-align: center;
+}
+
+.find_recipe:hover {
+	background-color: white;
+	color: black;
+}
+
 
 .dropdown_cousine {
   display: table-cell;
@@ -391,7 +409,7 @@ input[name *= "choose"] {
   padding-left: 0;
   padding-bottom: 5px;
   margin-top: 10px;
-  min-width: 144px;
+  min-width: 280px;
   height: 44px;
 }
 .dropdown_cousine a {
@@ -409,6 +427,10 @@ input[name *= "choose"] {
   	font-size: 18px;
   	text-align: center;
 }
+.choose_cousine_menu {
+	display: none;
+}
+
 .dropdown_cousine ul {
   list-style: none;
   border: 2px solid black;
@@ -592,4 +614,98 @@ input[name *= "choose"] {
 	font-size: 10px;
 	font-family: AvantGardeCTT;
 	display: inline-block;
+}
+
+.recipe_pages {
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-around;
+}
+
+
+a {
+  	text-decoration:none;
+	color: white;
+}
+
+.blocked {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+  	display: block;
+  	text-decoration: none;
+  	color: white;
+  	font-family: 'IntroInline';
+  	background-color: #9b9696;
+ 	padding: 12px 20px 10px;
+ 	text-transform: uppercase;
+  	font-size: 18px;
+  	text-align: center;
+}
+
+.non-blocked {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+  	display: block;
+  	text-decoration: none;
+  	color: white;
+  	font-family: 'IntroInline';
+  	background-color: transparent;
+ 	padding: 12px 20px 10px;
+ 	text-transform: uppercase;
+ 	border: 3px solid white;
+  	font-size: 18px;
+  	text-align: center;
+}
+
+.non-blocked:hover
+{
+	background-color: white;
+	color: black;
+}
+
+.current_page {
+	padding-top: 10px;
+}
+
+.description {
+	width: 300px;
+	word-break: break-all;
+	overflow: hidden;
+	overflow-wrap: break-word
+}
+
+.secondversion {
+	border: 3px solid white;
+	margin-left: 0px;
+}
+
+.authorized {
+	display: flex;
+}
+
+.authorized img{
+	width: 40px;
+	height: 40px;
+}
+
+.authorized span {
+	margin-right: -10px;
+
+}
+
+.authorized {
+	width: 20px;
+	margin: 0 0;
+
+}
+
+.authorized input:hover {
+	background-color: #fff;
+	color: black;
+}
+
+.authorized a:hover {
+	background: transparent;
 }

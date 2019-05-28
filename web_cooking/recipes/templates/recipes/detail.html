@@ -1,33 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "recipes/base1.html" %}
+{% block content %}
+<main class="container">
 <h1>{{ title }}</h1>
-{{ obj.description }}<br>
-{{ obj.diff}}<br>
-{{ obj.kitchen }}<br>
-{{ obj.category }}<br>
-<p>Просмотры: {{ obj.views }}</p>
-{{ obj.menu }}<br>
-{{ obj.time }}<br>
-{{ obj.cal }}<br>
-{{ obj.date }}<br>
-<a href ='/userpage/{{ obj.user_id }}'>{{ obj.user }}</a><br>
-{{ obj.updated }}<br>
+    <p class="descrip">{{ obj.description }}</p>
+    <div class="main">
+        <div class="img_d"><img class="img_detail" src="{{ MEDIA_URL }}{{ obj.image.url }}"></div>
+        <div class="recipe_info">
+            <div>
+                <h4 class="info_name">Кухня: </h4>
+                <h5 class="info_value">{{ obj.kitchen }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Категория :</h4>
+                <h5 class="info_value">{{ obj.category }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Меню</h4>
+                <h5 class="info_value">{{ obj.menu }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Дата добавления</h4>
+                <h5 class="info_value">{{ obj.date }}</h5>
+            </div>
+        </div>
+        <div class="recipe_info">
+            <div>
+                <h4 class="info_name">Дата обновления</h4>
+                <h5 class="info_value">{{ obj.updated }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Время готовки</h4>
+                <h5 class="info_value">{{ obj.time }} минут</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Количество просмотров</h4>
+                <h5 class="info_value">{{ obj.views }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Сложность</h4>
+                <h5 class="info_value">{{ obj.diff}}</h5>
+            </div>
+            <div/>
+        </div>
+    </div>
 
-{% if request.user == obj.user %}
 
-<a href='{% url 'edit' obj.id %}'>Редактировать</a>
+</main>
+    <div class="edit container">
+        {% if request.user == obj.user %}
 
-<a href='{% url 'delete' obj.id %}'>Удалить</a>
+     <a href='{% url 'edit' obj.id %}'>Редактировать</a>
 
-{% endif %}
-<a href='{% url 'home' %}'>В главное меню</a>
+     <a class="delete_recipe" href='{% url 'delete' obj.id %}'>Удалить</a>
 
-
-
-</body>
-</html>
+     {% endif %}
+     <a href='{% url 'home' %}'>В главное меню</a>
+    </div>
+{% endblock %}
