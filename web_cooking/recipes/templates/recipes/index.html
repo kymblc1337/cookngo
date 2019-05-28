@@ -8,7 +8,7 @@
             <a href="javascript:void(0);" class="white-bg">
                 <span class="open">Кухня</span>
             </a>
-            <ul class="choose_cousine_menu" style="display: block;">
+            <ul class="choose_cousine_menu">
                {% for k in cousins %}
                  <li><input name="cousine" type="radio" value = {{ k.id }} id={{ k.id }}><label for={{ k.id}}>{{ k.title }}</label></li>
                {%  endfor %}
@@ -16,21 +16,21 @@
 
 
         </div>
-        <input name="choose_menu" value="2" type="text">
+        <input name="choose_cousine_menu" value="2" type="text">
         <div class="dropdown_cousine s1">
             <a href="javascript:void(0);">
                 <span class="open">Меню</span>
             </a>
-            <ul class="choose_cousine_menu" style="display: block;">
+            <ul class="choose_cousine_menu">
                 {% for l in menues %}
                 <li><input name = "menu" type="radio" value={{ l.id }} id={{ l.id }}><label for={{ l.id }}>{{ l.title }}</label></li>
                 {% endfor %}
             </ul>
         </div>
-        <input name="choose_category" value="3" type="text">
+        <input name="choose_cousine_menu" value="3" type="text">
         <div class="dropdown_cousine s2"><a href="javascript:void(0);" class="white-bg">
             <span class="open">Категория</span></a>
-            <ul class="cat" style="display: block;">
+            <ul class="choose_cousine_menu">
                 {% for k in category %}
                  <li><input name = "cat" type="radio" value={{ k.id }} id={{ k.id }}><label for={{ k.id }}>{{ k.title }}</label></li>
                {%  endfor %}

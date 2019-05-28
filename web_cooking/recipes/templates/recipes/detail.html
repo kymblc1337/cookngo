@@ -43,17 +43,16 @@
             <div/>
         </div>
     </div>
-    <div class="edit">
+
+</main>
+    <div class="edit container">
         {% if request.user == obj.user %}
 
      <a href='{% url 'edit' obj.id %}'>Редактировать</a>
 
-     <a href='{% url 'delete' obj.id %}'>Удалить</a>
+     <a class="delete_recipe" href='{% url 'delete' obj.id %}'>Удалить</a>
 
      {% endif %}
      <a href='{% url 'home' %}'>В главное меню</a>
     </div>
-
-
-</main>
 {% endblock %}

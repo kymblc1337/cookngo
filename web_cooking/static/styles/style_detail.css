@@ -77,3 +77,18 @@ h5 {
   	font-size: 18px;
   	text-align: center;
 }
+
+.edit {
+	margin-top: -50px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.edit a:hover {
+	background-color: white;
+	color: black;
+}
+
+a:nth-of-type(2):hover {
+	background-color: red;
+}

@@ -403,6 +403,7 @@ input[name *= "choose"] {
 	color: black;
 }
 
+
 .dropdown_cousine {
   display: table-cell;
   color: #333;
@@ -429,6 +430,10 @@ input[name *= "choose"] {
   	font-size: 18px;
   	text-align: center;
 }
+.choose_cousine_menu {
+	display: none;
+}
+
 .dropdown_cousine ul {
   list-style: none;
   border: 2px solid black;
