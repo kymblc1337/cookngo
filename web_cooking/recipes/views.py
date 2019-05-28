@@ -76,7 +76,7 @@ def is_valid_queryparam(param):
     return param != '' and param is not None
 
 class Index(ListView):
-    template_name = "recipes\index.html"
+    template_name = "recipes/userpage.html"
     paginate_by = 3
 
     def get(self, request, *args, **kwargs):
