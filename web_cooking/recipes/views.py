@@ -15,22 +15,16 @@ from django.db.models import Q
 
 
 def userpage(request, pageid =  None):
-    #current_user = get_object_or_404(User)
-    #print("**********************************************************************")
-    #print(request.user.is_authenticated)
-    #print("**********************************************************************")
-    if request.user.is_authenticated:
-        obj = get_object_or_404(User, id = pageid)
-        recipes_list = Recipe.objects.all().filter(user_id=pageid)
-        #b = str(a)[11:-2].replace('<Recipe', '').replace('>', '')
-        #b = b.replace(":", "")
-        data = {
-            "obj" : obj,
-            "recipes_list" : recipes_list
-        }
-        return render(request, "recipes/userpage.html", data)
-    else:
-        return redirect('/')
+    obj = get_object_or_404(User, id = pageid)
+    recipes_list = Recipe.objects.all().filter(user_id=pageid)
+    #b = str(a)[11:-2].replace('<Recipe', '').replace('>', '')
+    #b = b.replace(":", "")
+    data = {
+        "obj" : obj,
+        "recipes_list" : recipes_list
+    }
+    return render(request, "recipes/userpage.html", data)
+
 
 def post_detail(request, id = None):
     obj = get_object_or_404(Recipe, id=id)
@@ -83,7 +77,7 @@ def is_valid_queryparam(param):
 
 class Index(ListView):
     template_name = "recipes\index.html"
-    paginate_by = 6
+    paginate_by = 3
 
     def get(self, request, *args, **kwargs):
         search_filter = request.GET.get('search')
@@ -138,7 +132,7 @@ class Add_view(View):
             }
             return render(self.request, self.template_name, context)
         else:
-            return redirect('/')
+            return redirect('/accounts/login')
 
 
     def post(self, request, *args, **kwargs):
