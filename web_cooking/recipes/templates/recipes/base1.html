@@ -64,8 +64,16 @@
 			<input type="button" class="add_recipe" value="Добавить рецепт" onclick="location.href='add/'" />
 			<a class="add_recipe_plus" href="recipes/add.html"><img src="../static/img/add.png" alt=""></a>
 			<div class="profile_top">
-				<div class="profile_logo"><img src="../static/img/sasha.png" alt=""></div>
-				<img src="../static/img/pointer_black.png" alt="black_pointer">
+                {% if not request.user.is_authenticated %}
+                    <input type="button" class="add_recipe secondversion" value="Вход / Регистрация" onclick="location.href='accounts/login/'" />
+                {% else %}
+                    <div class="authorized">
+                        <span>Здравствуйте, {{request.user.username }}</span>
+                        <input type="button" class="add_recipe lk" value="ЛК" onclick="location.href='recipes/userpage'" />
+                        <a href="accounts/logout"><img src="../static/img/exit.png" alt="Выход"></a>
+
+                    </div>
+                {% endif %}
 			</div>
 
 		</div>

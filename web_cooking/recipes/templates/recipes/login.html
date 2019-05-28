@@ -1,8 +1,7 @@
-
+{% extends 'recipes/base_login.html' %}
+{% block content %}
 {% block login %}
-    <title>Login</title>
-
-    <div>
+    <div class="container">
         <form action="/accounts/login/" method="post">
             {% csrf_token %}
             <label for = "username">Username: </label>
@@ -16,4 +15,5 @@
         </form>
     </div>
 
+{% endblock %}
 {% endblock %}
