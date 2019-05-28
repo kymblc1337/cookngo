@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Username: {{ obj.username }}</h2><br>
+<h3>Last login: {{ obj.last_login }}</h3><br>
+<h2>{{ obj.username }} recipes:</h2>
+{% for k in recipes_list %}
+    <h4>Title:{{ k.title }}</h4>
+    <h4>Description: {{ k.description }}</h4>
+    <h4>Category:{{ k.category }}</h4>
+    <h4>Kitchen: {{ k.kitchen }}</h4>
+    <h4>Menu: {{ k.menu }}</h4>
+    <h4>Diff: {{ k.diff }}</h4>
+    <br>
+{% endfor %}
+</body>
+</html>
