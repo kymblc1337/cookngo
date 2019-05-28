@@ -1,26 +1,14 @@
 {% extends 'recipes/base_login.html' %}
 {% block content %}{% load widget_tweaks %}
 {% block reg %}
-    <div class="container">
-        <div class="login">
-    <h1>Вход и регистрация</h1>
-        <form action="/accounts/login/" method="post">
-            <div class="fieldWrapper">
-            <label for="{{ form.username.id_for_label}}">{{ form.username.id_for_label}}</label>
-            {{ form.username | add_class:"input_add" }}
-        </div>
-        <div class="fieldWrapper">
-            {{ form.password2.errors }}
-            <label for="{{ form.password2.id_for_label }}">{{ form.password2.id_for_label }}</label>
-            {{ form.password2  | add_class:"input_add"}}
-        </div>
-            <input class = "button add_recipe" type = "button" onclick="location.href='../../'" value = "Регистрация">
-
-            {% if registration_errors %}
-                <label class = "error">{{ registration_errors }}</label>
-            {% endif %}
+    <div>
+        <form action="/accounts/registration/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input class = "button" type = "submit" value="Зарегистрироваться">
         </form>
     </div>
-    </div>
+
 {% endblock %}
 {% endblock %}
