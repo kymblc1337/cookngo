@@ -19,7 +19,7 @@
 <body>
 	<header class = "head_margin">
 		<div class="navandlogo">
-			<div class = "logo"><img src="static/img/logo.jpg" alt="logo"></div>
+			<div class = "logo"><a href="??????????"><img src="static/img/logo.jpg" alt="logo"></a></div>
 		<nav>
 			<ul class="nav">
            		<li class = "menu 1n"><a href="#">Рецепты</a>
@@ -62,8 +62,15 @@
 			<input type="button" class="add_recipe" value="Добавить рецепт" onclick="location.href='add/'" />
 			<a class="add_recipe_plus" href="recipes/add.html"><img src="static/img/add.png" alt=""></a>
 			<div class="profile_top">
-				<div class="profile_logo"><img src="static/img/sasha.png" alt=""></div>
-				<img src="static/img/pointer_black.png" alt="black_pointer">
+                {% if not request.user.is_authenticated %}
+                    <input type="button" class="add_recipe secondversion" value="Вход / Регистрация" onclick="location.href='accounts/login/'" />
+                {% else %}
+                    <div class="authorized">
+                        <span>Добро пожаловать, {{request.user.username }}</span>
+                        a
+
+                    </div>
+                {% endif %}
 			</div>
 
 		</div>

@@ -179,13 +179,14 @@ header {
 .navandlogo {
 	margin-bottom: 10px;
 	display: flex;
-	width: 60%;
+	width: 40%;
 }
 
 .auth-block {
 	margin-right: 1%;
-	width: 40%;
-	justify-content: flex-end;
+	width: 60%;
+	justify-content: flex-start;
+	padding-right: 150px;
 }
 
 .auth {
@@ -202,10 +203,6 @@ header {
 	transition: background 0.5s ease;
 	display: flex;
 	width: 123px;
-}
-
-.profile_top:hover {
-	background-color: white;
 }
 
 .profile_logo {
@@ -637,7 +634,7 @@ a {
 	transition: background 0.5s ease;
   	display: block;
   	text-decoration: none;
-  	color: #fff;
+  	color: white;
   	font-family: 'IntroInline';
   	background-color: #9b9696;
  	padding: 12px 20px 10px;
@@ -652,7 +649,7 @@ a {
 	transition: background 0.5s ease;
   	display: block;
   	text-decoration: none;
-  	color: #fff;
+  	color: white;
   	font-family: 'IntroInline';
   	background-color: transparent;
  	padding: 12px 20px 10px;
@@ -664,7 +661,6 @@ a {
 
 .non-blocked:hover
 {
-
 	background-color: white;
 	color: black;
 }
@@ -678,4 +674,13 @@ a {
 	word-break: break-all;
 	overflow: hidden;
 	overflow-wrap: break-word
+}
+
+.secondversion {
+	border: 3px solid white;
+	margin-left: 0px;
+}
+
+.authorized {
+	display: flex;
 }
