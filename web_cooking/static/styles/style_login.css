@@ -18,6 +18,10 @@ input {
     border-bottom: 5px solid white;
 }
 
+.white-color {
+    color: white;
+}
+
 #username, #password, #password2 {
     background: transparent;
     border: 2px solid white;

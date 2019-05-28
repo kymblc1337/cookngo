@@ -1,7 +1,7 @@
 {% extends "recipes/base1.html" %}
 {% block content %}
 <main class="container">
-<h1>{{ title }}</h1>
+<h1 >{{ title }}</h1>
     <p class="descrip">{{ obj.description }}</p>
     <div class="main">
         <div class="img_d"><img class="img_detail" src="{{ MEDIA_URL }}{{ obj.image.url }}"></div>
@@ -25,8 +25,8 @@
         </div>
         <div class="recipe_info">
             <div>
-                <h4 class="info_name">Дата обновления</h4>
-                <h5 class="info_value">{{ obj.updated }}</h5>
+                <h4 class="info_name">Автор:</h4>
+                <h5 class="info_value">{{ obj.user }}</h5>
             </div>
             <div>
                 <h4 class="info_name">Время готовки</h4>

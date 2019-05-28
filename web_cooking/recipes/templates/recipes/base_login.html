@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 {% load staticfiles %}
 <html lang="ru">
 <head>
@@ -39,7 +40,7 @@
 				   		<li><a href="#">Еще</a></li>
 					</ul>
 			 	</li>
-
+				<!--
              	<li class = "menu"><a href="#">Мастер-классы</a></li>
              	<li class = "menu 3n"><a href="#">О еде</a>
                 <ul>
@@ -48,6 +49,7 @@
 				   		<li><a href="#">Еще</a></li>
 				</ul>
         		</li>
+        		-->
             </ul>
         <nav>
 		</div>
@@ -68,7 +70,7 @@
                 {% else %}
                     <div class="authorized">
                         <span>Здравствуйте, {{request.user.username }}</span>
-                        <input type="button" class="add_recipe lk" value="ЛК" onclick="location.href='recipes/user/'" />
+                        <input type="button" class="add_recipe lk" value="ЛК" onclick="location.href='../userpage/{{ request.user.id }}'" />
                         <a href="accounts/logout"><img src="../../static/img/exit.png" alt="Выход"></a>
                     </div>
                 {% endif %}
