@@ -53,3 +53,20 @@ input {
 	background-color: white;
 	color: black;
 }
+
+.fieldWrapper {
+    align-items: center;
+    padding-right: 200px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fieldWrapper .input_add {
+    margin-bottom: 10px;
+    margin-right: 100px;
+}
+
+.input_image {
+    margin-left: 40px;
+    margin-right: -20px;
+}
