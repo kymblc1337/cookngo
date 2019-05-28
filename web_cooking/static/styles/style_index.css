@@ -684,3 +684,28 @@ a {
 .authorized {
 	display: flex;
 }
+
+.authorized img{
+	width: 40px;
+	height: 40px;
+}
+
+.authorized span {
+	margin-right: -10px;
+
+}
+
+.authorized {
+	width: 20px;
+	margin: 0 0;
+
+}
+
+.authorized input:hover {
+	background-color: #fff;
+	color: black;
+}
+
+.authorized a:hover {
+	background: transparent;
+}
