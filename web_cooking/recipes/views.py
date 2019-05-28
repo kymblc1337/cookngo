@@ -83,7 +83,7 @@ def is_valid_queryparam(param):
 
 class Index(ListView):
     template_name = "recipes\index.html"
-    paginate_by = 3
+    paginate_by = 6
 
     def get(self, request, *args, **kwargs):
         search_filter = request.GET.get('search')

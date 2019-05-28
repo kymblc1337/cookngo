@@ -38,7 +38,7 @@
         </div>
 
     </div>
-    <button type="submit" class="btn btn-primary">Search</button>
+    <button type="submit" class="find_recipe" name = "choose">Search</input>
 </form>
 
     <section class="awSlider">
@@ -118,23 +118,27 @@
         <div class="recipe_pages">
             <div class="previous">
                 {% if page_obj.has_previous %}
-                    <a href="?page={{ page_obj.previous_page_number }}">Предыдущая страница</a>
+                    <div class="non-blocked">
+                        <a href="?page={{ page_obj.previous_page_number }}">Предыдущая страница</a>
+                    </div>
                 {% else %}
-                    <span>Следующая страница</span>
+                    <div class="blocked">Предыдущая страница</div>
                 {% endif %}
             </div>
 
             <div class="current_page">
                 <span class="current">
-                    Page {{ page_obj.number }} of {{ paginator.num_pages }}.
+                    Страница {{ page_obj.number }} из {{ paginator.num_pages }}
                 </span>
             </div>
             <div class="next">
                 {% if page_obj.has_next %}
-                    <div class="non-blocked"></div>
-                    <a href="?page={{ page_obj.next_page_number }}">Следующая страница</a>
+                    <div class="non-blocked">
+                        <a href="?page={{ page_obj.next_page_number }}">Следующая страница</a>
+                    </div>
+
                 {% else %}
-                    <div class="blocked">Следующая страница</div>
+                        <div class="blocked">Следующая страница</div>
                 {% endif %}
             </div>
 

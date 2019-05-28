@@ -383,6 +383,22 @@ input[name *= "choose"] {
 	color: black;
 }
 
+.find {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+  	display: block;
+  	text-decoration: none;
+  	color: #fff;
+  	font-family: 'IntroInline';
+  	background-color: transparent;
+ 	padding: 12px 20px 10px;
+ 	text-transform: uppercase;
+ 	border: 3px solid white;
+  	font-size: 18px;
+  	text-align: center;
+}
+
 .dropdown_cousine {
   display: table-cell;
   color: #333;
@@ -391,7 +407,7 @@ input[name *= "choose"] {
   padding-left: 0;
   padding-bottom: 5px;
   margin-top: 10px;
-  min-width: 144px;
+  min-width: 250px;
   height: 44px;
 }
 .dropdown_cousine a {
@@ -599,7 +615,28 @@ input[name *= "choose"] {
 	justify-content: space-around;
 }
 
-.previous, .next {
+
+a {
+  	text-decoration:none;
+	color: white;
+}
+
+.blocked {
+	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.5s ease;
+	transition: background 0.5s ease;
+  	display: block;
+  	text-decoration: none;
+  	color: #fff;
+  	font-family: 'IntroInline';
+  	background-color: #9b9696;
+ 	padding: 12px 20px 10px;
+ 	text-transform: uppercase;
+  	font-size: 18px;
+  	text-align: center;
+}
+
+.non-blocked {
 	-webkit-transition: background 0.5s ease;
 	-moz-transition: background 0.5s ease;
 	transition: background 0.5s ease;
@@ -615,25 +652,13 @@ input[name *= "choose"] {
   	text-align: center;
 }
 
-.previous:hover, .next:hover {
-	-webkit-transition: background 0.5s ease;
-	-moz-transition: background 0.5s ease;
-	transition: background 0.5s ease;
+.non-blocked:hover
+{
+
 	background-color: white;
 	color: black;
 }
 
-.next span, .previous span {
-	color: red;
-	background-color: #9b9696;
-}
-
-a {
-  	text-decoration:none;
-	color: white;
-}
-
-.blocked {
-	background-color: #494949;
-	padding: 12px 20px 10px;
+.current_page {
+	padding-top: 10px;
 }
