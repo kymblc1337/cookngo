@@ -4,14 +4,51 @@
 <h1>{{ title }}</h1>
     <p class="descrip">{{ obj.description }}</p>
     <div class="main">
-        <div class="img_detail"><img src="{{ MEDIA_URL }}{{ obj.image.url }}"></div>
-        <div class="inf">
-        <!--{{ obj.diff}}!--><p>Сложность : {{ obj.diff}}</p>
-        <!--{{ obj.kitchen }}!--><p>Кухня : {{ obj.kitchen }}</p>
-        <!--{{ obj.category }}!--><p>Категория : {{ obj.category }}</p>
-        <!--{{ obj.menu }}!--><p>Меню : {{ obj.menu }} </p>
-        <!--{{ obj.date }}!--><p>Дата добавления : {{ obj.date }}</p>
-        <!--{{ obj.updated }}!--><p>Дата обновления : {{ obj.updated }}</p>
+        <div class="img_d"><img class="img_detail" src="{{ MEDIA_URL }}{{ obj.image.url }}"></div>
+        <div class="recipe_info">
+            <div>
+                <h4 class="info_name">Кухня: </h4>
+                <h5 class="info_value">{{ obj.kitchen }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Категория :</h4>
+                <h5 class="info_value">{{ obj.category }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Меню</h4>
+                <h5 class="info_value">{{ obj.menu }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Дата добавления</h4>
+                <h5 class="info_value">{{ obj.date }}</h5>
+            </div>
+        </div>
+        <div class="recipe_info">
+            <div>
+                <h4 class="info_name">Дата обновления</h4>
+                <h5 class="info_value">{{ obj.updated }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Время готовки</h4>
+                <h5 class="info_value">{{ obj.time }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Количество просмотров</h4>
+                <h5 class="info_value">{{ obj.views }}</h5>
+            </div>
+            <div>
+                <h4 class="info_name">Сложность</h4>
+                <h5 class="info_value">{{ obj.diff}}</h5>
+            </div>
+            <div/>
+{#        <p><h5>Кухня :</h5> {{ obj.kitchen }}</p>#}
+{#        <p><h5>Категория :</h5> {{ obj.category }}</p>#}
+{#        <p><h5>Меню :</h5> {{ obj.menu }} </p>#}
+{#        <p><h5>Дата добавления :</h5> {{ obj.date }}</p>#}
+{#        <p><h5>Дата обновления  :</h5>{{ obj.updated }}</p>#}
+{#         <p><h5>Время готовки :</h5> {{ obj.time }}</p>#}
+{#         <p><h5>Сложность :</h5>{{ obj.diff}}/3</p>#}
+{#         <p><h5>Количество просмотров ::</h5> {{ obj.views }}</p>#}
         </div>
     </div>
 </main>
