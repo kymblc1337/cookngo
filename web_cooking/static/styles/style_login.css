@@ -1,3 +1,31 @@
-input["name='username'"] {
+input[name='username'] {
+    background: transparent;
+}
+
+input {
+    outline: none;
+}
+
+.login {
+    text-align: center;
+}
+
+.login form {
+    margin-top: 30px;
+}
+.login h1 {
+    line-height: 100px;
+    border-bottom: 5px solid white;
+}
+
+.login input:not(last-of-type) {
+    background: transparent;
     border: 2px solid white;
+    color: white;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+    height: 38px;
+    width: 250px;
+    outline:none;
 }
