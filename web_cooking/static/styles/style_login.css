@@ -18,7 +18,7 @@ input {
     border-bottom: 5px solid white;
 }
 
-.login input:not(last-of-type) {
+#username, #password, #password2 {
     background: transparent;
     border: 2px solid white;
     color: white;
@@ -28,4 +28,26 @@ input {
     height: 38px;
     width: 250px;
     outline:none;
+}
+
+.login input:last-of-type {
+    border-radius: 0;
+}
+
+.loginregistr {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.loginregistr input:hover {
+    background: #fff;
+    color: black;
+}
+
+.error {
+    margin-top: 20px;
+}
+
+#password2 {
+    margin-left: 0px;
 }
