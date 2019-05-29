@@ -77,3 +77,7 @@ input {
     margin-right: -50px;
     margin-top: 10px;
 }
+
+select option {
+    background-color: black;
+}

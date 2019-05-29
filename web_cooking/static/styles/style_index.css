@@ -604,7 +604,8 @@ input[name *= "choose"] {
 	justify-content: space-around;
 }
 
-
+select {
+}
 
 .info_name {
 	line-height: 20px;
