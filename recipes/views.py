@@ -76,7 +76,7 @@ def is_valid_queryparam(param):
     return param != '' and param is not None
 
 class Index(ListView):
-    template_name = "recipes\index.html"
+    template_name = "recipes/index.html"
     paginate_by = 3
 
     def get(self, request, *args, **kwargs):
@@ -84,7 +84,7 @@ class Index(ListView):
         menu_id = request.GET.get('menu')
         cous_id = request.GET.get('cousine')
         cat_id = request.GET.get('cat')
-        date_id = request.GET.get('Data_button')
+        date_id = request.GET.get('Date_button')
         popular_id = request.GET.get('Popular_button')
         if is_valid_queryparam(search_filter):
             self.recipe_search =  Recipe.objects.filter(title__contains=search_filter)

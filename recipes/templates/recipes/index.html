@@ -82,7 +82,8 @@
                 </form>
             </div>
         </div>
-        <div class="recipes_hidden">
+        <div class="recipes_hidden" id="content">
+            <div id="container1">
             {% for recipe in object_list %}
                  <a href={% url 'detail' recipe.id %}>
                 <div class="recipe_block">
@@ -113,34 +114,42 @@
                 </div>
                  </a>
             {% endfor %}
-
+            </div>
         </div>
-        <div class="recipe_pages">
-            <div class="previous">
-                {% if page_obj.has_previous %}
-                    <div class="non-blocked">
-                        <a href="?page={{ page_obj.previous_page_number }}">Предыдущая страница</a>
-                    </div>
-                {% else %}
-                    <div class="blocked">Предыдущая страница</div>
-                {% endif %}
-            </div>
+<!--        <div class="recipe_pages" id="recipe_pages">-->
+<!--            <div class="recipe_pages1" id="recipe_pages1">-->
+<!--                <div class="previous">-->
+<!--                {% if page_obj.has_previous %}-->
+<!--                    <div class="non-blocked">-->
+<!--                        <a  id="a" href="?page={{ page_obj.previous_page_number }}">Предыдущая страница</a>-->
+<!--                    </div>-->
+<!--                {% else %}-->
+<!--                    <div class="blocked">Предыдущая страница</div>-->
+<!--                {% endif %}-->
+<!--            </div>-->
 
-            <div class="current_page">
-                <span class="current">
-                    Страница {{ page_obj.number }} из {{ paginator.num_pages }}
-                </span>
-            </div>
-            <div class="next">
-                {% if page_obj.has_next %}
-                    <div class="non-blocked">
-                        <a href="?page={{ page_obj.next_page_number }}">Следующая страница</a>
-                    </div>
+<!--            <div class="current_page">-->
+<!--                <span class="current">-->
+<!--                    Страница {{ page_obj.number }} из {{ paginator.num_pages }}-->
+<!--                </span>-->
+<!--            </div>-->
+<!--            <div class="next">-->
+<!--                {% if page_obj.has_next %}-->
+<!--                    <div class="non-blocked">-->
+<!--                        <a id="a" href="?page={{ page_obj.next_page_number }}">Следующая страница</a>-->
+<!--                    </div>-->
 
-                {% else %}
-                        <div class="blocked">Следующая страница</div>
-                {% endif %}
-            </div>
+<!--                {% else %}-->
+<!--                        <div class="blocked">Следующая страница</div>-->
+<!--                {% endif %}-->
+<!--            </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+        <div class="recipe_pages container">
+            {% for i in page_obj.paginator.page_range %}
+                <div class="pages_ajax"><a class="contrlbut" href="?page={{ i }}">{{ i }}</a></div>
+        {% endfor %}
 
         </div>
 

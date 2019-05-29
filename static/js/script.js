@@ -49,8 +49,6 @@ $(".3n").hover(function () {
 	});
 });
 
-
-
 //
 // $(".recipe_block").hover(function () {
 // 	$(".recipe_block p").addClass("active1");
