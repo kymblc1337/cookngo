@@ -44,3 +44,22 @@
 	display: flex;
 	justify-content: space-around;
 }
+
+.recipe_info1:hover {
+	color: black;
+    border: 2px solid black;
+    background-color: white;
+}
+
+
+.info_name1 {
+	line-height: 20px;
+	font-size: 12px;
+	border-bottom: 1px solid white;
+}
+
+.info_value1 {
+	font-size: 10px;
+	font-family: AvantGardeCTT;
+	display: inline-block;
+}

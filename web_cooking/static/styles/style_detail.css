@@ -13,6 +13,10 @@ h1 {
 	font-weight: normal;
 }
 
+.logo:hover {
+	background: transparent;
+}
+
 .img_detail {
 	margin-top: 0px;
 	margin-left: 50px;
@@ -44,18 +48,22 @@ h5 {
 	font-size: 20px;
 }
 
-.recipe_info {
+.recipe_info2 {
 	display: block;
 	border: none;
 	margin-right: 50px;
 }
 
-.info_name {
+.info_name2 {
+	line-height: 30px;
+	border-bottom: 1px solid white;
 	font-size: 20px;
 }
 
-.info_value {
+.info_value2 {
 	font-size: 15px;
+	font-family: AvantGardeCTT;
+	display: inline-block;
 }
 
 .recipe_info div {

@@ -607,6 +607,10 @@ input[name *= "choose"] {
 select {
 }
 
+.logo:hover {
+	background: transparent;
+}
+
 .info_name {
 	line-height: 20px;
 	font-size: 12px;
@@ -711,4 +715,12 @@ a {
 
 .authorized a:hover {
 	background: transparent;
+}
+
+.logo:hover {
+	background: none !important;
+}
+
+#container1 {
+	display: flex;
 }
