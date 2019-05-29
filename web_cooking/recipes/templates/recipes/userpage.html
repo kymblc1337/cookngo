@@ -1,39 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/styles/lk_style.css">
-    <title>Title</title>
-</head>
-<body>
-<div class="person">
-<h2>Логин: {{ obj.username }}</h2>
-    <h3>Пароль: {{ obj.last_login }}</h3><br></div>
-<h2 style="margin-left: 700px;font-size: 45px;">{{ obj.username }} Мои рецепты:</h2>
-<div class="recipe" >
-    <h4>Title : Борщ{{ k.title }}</h4>
-    <h4>Description: {{ k.description }}</h4>
-    <p style="font-weight: 100;">У каждой хозяйки, конечно, есть свой рецепт приготовления борща.
-        Мне хотелось бы поделиться с вами одним из своих рецептов.
-        Может быть вам понравится и вы им воспользуетесь
-        Насыщенный цвет и вкус. К этому борщику ещe чeрный хлебушек, чесночок и ложечку сметаны.
-        М-м-м... вкусно.</p>
-    <h4>Category : Супы{{ k.category }}</h4>
-    <h4>Kitchen : Украинская {{ k.kitchen }}</h4>
-    <h4>Menu : -{{ k.menu }}</h4>
-    <h4>Diff : 3{{ k.diff }}</h4>
-</div>
-{% for k in recipes_list %}
+{% extends 'recipes/base1.html' %}
+{% block content %}
+<main class="container">
+    <div class="person">
+    <h2 class="h2_userpage">Логин: {{ obj.username }}</h2>
+        <h3 class="h3_userpage">Последняя авторизация: {{ obj.last_login }}</h3><br>
+    </div>
+    <h2 class="h2_userpage" style="font-size: 45px;">Мои рецепты:</h2>
+ <div class="recipes_hidden">
+            {% for recipe in recipes_list %}
+                 <a href={% url 'detail' recipe.id %}>
+                <div class="recipe_block">
+                    {% if recipe.image %}
+                        <img src="{{ MEDIA_URL }}{{ recipe.image.url }}">
+                    {% endif %}
+                    <h2>{{ recipe.title }}</h2>
+                    <p class="description">{{ recipe.description }}</p>
+                    <div class="recipe_info1">
+                        <div>
+                            <h4 class="info_name">ВреMя</h4>
+                            <h5 class="info_value">{{ recipe.time }}<br> минут</h5>
+                        </div>
+                        <div>
+                            <h4 class="info_name">Сложность</h4>
+                            <h5 class="info_value">{{ recipe.diff }}</h5>
+                        </div>
+                        <div>
+                            <h4 class="info_name">Калории</h4>
+                            <h5 class="info_value">{{ recipe.cal }} ккал<br>100 грамм</h5>
+                        </div>
+                        <div>
+                            <h4 class="info_name">Просмотры</h4>
+                            <h5 class="info_value">{{ recipe.views }}</h5>
+                        </div>
+                    </div>
+                </div>
+                 </a>
+            {% endfor %}
 
-    <h4>Title:{{ k.title }}</h4>
-    <h4>Description: {{ k.description }}</h4>
-    <h4>Category:{{ k.category }}</h4>
-    <h4>Kitchen: {{ k.kitchen }}</h4>
-    <h4>Menu: {{ k.menu }}</h4>
-    <h4>Diff: {{ k.diff }}</h4>
-    <br>
-{% endfor %}
-<input type = "button" onclick="location.href='{% url 'home' %}'" value = "На главное меню">
-<!--<a href='{% url 'home' %}'>В главное меню</a>--!>
-</body>
-</html>
+        </div>
+    </div>
+</main>
+{% endblock %}

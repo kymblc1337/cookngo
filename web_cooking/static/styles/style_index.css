@@ -554,7 +554,7 @@ input[name *= "choose"] {
 	height: 220px;
 }
 
-.recipes_hidden{
+.recipes_hidden {
 	letter-spacing: 1px;
 	display: flex;
 	flex-wrap: wrap;
@@ -571,13 +571,15 @@ input[name *= "choose"] {
 }
 
 .recipe_block p {
+	line-height: 1em;
+	height: 5em;
+	overflow: hidden;
 	font-family: 'avantgardectt';
 	text-align: left;
 	margin-right: 8px;
 	margin-left: 10px;
 	letter-spacing: 2px;
 	font-size: 14px;
-	display: non;
 }
 
 .recipe_block:hover {
