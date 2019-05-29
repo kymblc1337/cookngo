@@ -774,4 +774,7 @@ input[name="username"]
     height: 38px;
     width: 250px;
     outline:none;
+
+input #id_username {
+color: white;
 }

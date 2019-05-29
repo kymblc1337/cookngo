@@ -23,12 +23,6 @@
 		<nav>
 			<ul class="nav">
            		<li class = "menu 1n"><a href="#">Рецепты</a>
-                <ul>
-				   		<li><a href="static/img/search.png">Мясо</a></li>
-				   		<li><a href="#">Рыба</a></li>
-				   		<li><a href="#">Десерты</a></li>
-                   		<li><a href="#">Еще</a></li>
-				</ul>
         		</li>
 
             	<li class = "menu 2n"><a href="#">В мире кулинарии</a>
@@ -60,11 +54,11 @@
 			        <span class="sb-icon-search"><img src="static/img/search.png" alt=""></span>
 		    	</form>
 			</div>
-			<input type="button" class="add_recipe" value="Добавить рецепт" onclick="location.href={% url 'create' %}" />
-			<a class="add_recipe_plus" href="recipes/add.html"><img src="static/img/add.png" alt=""></a>
+			<input type="button" class="add_recipe" value="Добавить рецепт" onclick="location.href='/add/'" />
+			<a class="add_recipe_plus" href={% url 'create' %}><img src="static/img/add.png" alt=""></a>
 			<div class="profile_top">
                 {% if not request.user.is_authenticated %}
-                    <input type="button" class="add_recipe secondversion" value="Вход / Регистрация" onclick="location.href='accounts/login/'" />
+                    <input type="button" class="add_recipe secondversion" value="Вход / Регистрация" onclick="location.href='../accounts/login/'" />
                 {% else %}
                     <div class="authorized">
                         <span>Здравствуйте, {{request.user.username }}</span>
