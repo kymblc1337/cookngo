@@ -1,0 +1,21 @@
+{% extends "recipes/base1.html" %}
+{% block content %}
+<div class="person">
+<h2>Логин: {{ obj.username }}</h2>
+    <h3>Пароль: {{ obj.last_login }}</h3><br></div>
+<h2 style="margin-left: 700px;font-size: 45px;">{{ obj.username }} Мои рецепты:</h2>
+<div class="recipe" >
+
+{% for k in recipes_list %}
+
+    <h4>Title:{{ k.title }}</h4>
+    <h4>Description: {{ k.description }}</h4>
+    <h4>Category:{{ k.category }}</h4>
+    <h4>Kitchen: {{ k.kitchen }}</h4>
+    <h4>Menu: {{ k.menu }}</h4>
+    <h4>Diff: {{ k.diff }}</h4>
+    <br>
+{% endfor %}
+</div>
+<input type = "button" onclick="location.href='{% url 'home' %}'" value = "На главное меню">
+{% endblock %}
