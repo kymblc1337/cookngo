@@ -4,7 +4,9 @@
 <h1 >{{ title }}</h1>
     <p class="descrip">{{ obj.description }}</p>
     <div class="main">
+        {%if obj.image %}
         <div class="img_d"><img class="img_detail" src="{{ MEDIA_URL }}{{ obj.image.url }}"></div>
+        {% endif %}
         <div class="recipe_info2">
             <div>
                 <h4 class="info_name2">Кухня: </h4>
