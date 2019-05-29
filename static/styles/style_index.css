@@ -724,3 +724,7 @@ a {
 #container1 {
 	display: flex;
 }
+
+input #id_username {
+color: white;
+}
