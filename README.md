@@ -9,6 +9,8 @@
 
 Отчеты по практике - https://drive.google.com/drive/folders/1FQbKZvBqusW9dmSpV66Xu0hDvyUqGNw-?usp=sharing
 
+Cсылка на сайт - https://cookngo.herokuapp.com
+
 Веремьева Наталья - Frontend разработчик
 Жгулева Дарья - Frontend разработчик
 Ерохин Никита - Backend разработчик
